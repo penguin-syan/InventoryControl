@@ -18,7 +18,7 @@
 }
 
 function updateNotice(){
-	$passfile = "./admin/notice/notice.txt";
+	$passfile = "./admin/updatenotice/notice.txt";
 	$fp = fopen($passfile, 'w');
 	fwrite($fp, $_POST['newNotice']);
 	fclose($fp);
@@ -52,7 +52,7 @@ function updateNotice(){
 			<td>
 				<font face="富士ポップ" size="3" color="#FFFFFF"><marquee width="520" scrollamount="4" truespeed="20">
 					<?php
-					$passfile = "./admin/notice/notice.txt";
+					$passfile = "./admin/updatenotice/notice.txt";
 					$fp = fopen($passfile, 'r');
 					echo fgets($fp);
 					fclose($fp);
