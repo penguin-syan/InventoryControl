@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: lightyellow;
+    user-select: none;
+}
+
+h1 {
+    padding: 1%;
+}
+
+p {
+    text-align: center;
+}
+
+form {
+    text-align: center;
+    margin: auto;
+    margin-top: 10%;
+    width: 80%;
+    height: 80%;
+}
+
+input {
+    font-size: 30px;
+}
+
+#nowNotice {
+    font-size: 28px;
+    margin-top: 5%;
+}
