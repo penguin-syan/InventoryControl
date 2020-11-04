@@ -14,13 +14,6 @@
  -->
 
  <!DOCTYPE html>
-
- <?php
- if(isset($_POST['add'])){
-     require_once '../../connect_db.php';
-    //  addNewMenu();
- }
- ?>
  <head>
      <title>食べ物販売 - 新規商品登録</title>
      <meta charset="UTF-8">
@@ -35,13 +28,13 @@
  
  <body oncontextmenu="return false;">
      <h1>人間共生システム研究室 在庫登録</h1>
-     <form method="POST" enctype="multipart/form-data">
+     <form method="POST" enctype="multipart/form-data" action="addmenu.php">
          <label for="itemName">商品名：</label>
          <input type="text" id="itemName" name="itemName" maxlength="12" size="15"><br>
          <label for="price">価格　：</label>
          <input type="number" id="price" name="price" min="0"><br>
          <label for="image">画像　：</label>
-         <input type="file" id="image" name="image"><br>
+         <input type="file" name="upfile" size="30" id="upload"><br>
          <input type="submit" name="add" value="追加">
      </form>
      

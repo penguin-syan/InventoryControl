@@ -207,9 +207,20 @@ function updateInventory(){
 /**
  * 新規メニューを登録する
  */
-// function addNewMenu() {
-//     $image = uniqid(mt_rand(), true);
-//     $image .= '.'.substr(strrchr($_FILES['image']['name'], '.'), 1);
-//     $file = "images/$image";
-//     $sqlCommand = "insert into inventory values(0, 'name', );";
-// }
+function addNewMenu() {
+    if (is_uploaded_file($_FILES["upfile"]["tmp_name"])) {
+        $imageFile = date("Ymd-His").$_FILES['upfile']['name'];
+        if (move_uploaded_file ($_FILES["upfile"]["tmp_name"], "../../images/".$imageFile)) {
+           chmod("../../images/".$imageFile, 0644);
+           echo "メニューを追加しました．";
+       } else {
+           echo "ファイルをアップロードできません。";
+           return;
+       }
+    } else {
+        echo "ファイルが選択されていません。";
+        return;
+    }
+    $sqlCommand = "insert into inventory values(0, '".$_POST['itemName']."', '".$imageFile."', ".$_POST['price'].", 1, 0);";
+    $result = mysqlCommand($sqlCommand);
+}
