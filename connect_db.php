@@ -1,11 +1,12 @@
 <?php
 header('Content-Type: text/html; charset=UTF-8');
+require_once 'db_info.php';
 
 /**
  * データベース上でsqlコマンドを実行する
  */
 function mysqlCommand($sqlCommand){
-    require_once 'db_info.php';
+    extract($GLOBALS);
     
     $db = new PDO($DB_info, $DB_id, $DB_pass);
     $sql = $db->prepare($sqlCommand);
