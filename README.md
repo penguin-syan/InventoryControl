@@ -1,5 +1,6 @@
-# InventoryControl
+# InventoryControl（開発中）
 ![GitHub](https://img.shields.io/github/license/penguin-syan/InventoryControl)  
+**readmeも作成中**
 研究室内の食品販売用システム
 ## 説明（何が出来る物なのか）
 
