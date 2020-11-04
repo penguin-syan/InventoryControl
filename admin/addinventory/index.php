@@ -32,7 +32,7 @@
  
  <body oncontextmenu="return false;">
      <h1>人間共生システム研究室 在庫登録</h1>
-     <form method="POST">
+     <form method="POST" action="../checkInventory/index.php">
         <table border="1px">
             <tr>
                 <?php
@@ -40,10 +40,10 @@
                 outputAllMenu();
                 ?>
             </tr>
-        <input type="submit" value="↻更新" id="buy">
+        <input type="submit" value="↻更新" id="buy" name="updateInventory">
      </form>
      
-     <p id="pageBack"><a href="../">◁購入をやめる</a></p>
+     <p id="pageBack"><a href="../">◁戻る</a></p>
  
  </body>
  </html>

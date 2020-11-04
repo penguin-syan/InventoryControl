@@ -11,6 +11,12 @@
 * see https://opensource.org/licenses/MIT
 *=============================================================
  -->
+ <?php
+	if(isset($_POST['updateInventory'])){
+        require_once '../../connect_db.php';
+        updateInventory();
+    }
+?>
 
  <!DOCTYPE html>
 

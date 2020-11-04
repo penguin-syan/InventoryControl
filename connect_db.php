@@ -119,7 +119,7 @@ function view4purchase(){
 /**
  * 購入状況をDBに適用する
  */
-function updateInventory(){
+function updateInventory_buy(){
     $sqlCommand = "select * from inventory;";
     $sql = mysqlCommand($sqlCommand);
 
@@ -184,6 +184,23 @@ function outputAllMenu(){
         $count++;
     }
     echo "</tr>";
+}
+
+/**
+ * 在庫状況をDBに適用する
+ */
+function updateInventory(){
+    $sqlCommand = "select * from inventory;";
+    $sql = mysqlCommand($sqlCommand);
+
+    $total = 0;
+    foreach($sql as $value){
+        //販売中なら，テキストボックス内の数値を確認しupdateする．
+        if($value['onsale'] == 1){
+            $temp = $value[0].'n';
+            $result = mysqlCommand("update inventory set num = ".((int)$_POST[$temp])." where id = ".$value[0].";");
+        }
+    }
 }
 
 

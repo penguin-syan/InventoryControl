@@ -38,7 +38,7 @@
          </tr>
          <?php
          require_once '../../connect_db.php';
-         updateInventory();
+         updateInventory_buy();
          ?>
      </table>
      <form>
