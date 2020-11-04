@@ -38,7 +38,7 @@
             view4purchase();
             ?>
         </table>
-        <input type="submit" value="💰購入" id="buy">
+        <input type="submit" value="💰購入" id="buy" onclick="return confirm('購入を続行しますか？\n注：購入内容の確認画面は表示されません．');">
      </form>
      
      <p id="pageBack"><a href="../">◁購入をやめる</a></p>
