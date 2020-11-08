@@ -193,7 +193,6 @@ function updateInventory(){
     $sqlCommand = "select * from inventory;";
     $sql = mysqlCommand($sqlCommand);
 
-    $total = 0;
     foreach($sql as $value){
         //販売中なら，テキストボックス内の数値を確認しupdateする．
         if($value['onsale'] == 1){
@@ -223,4 +222,21 @@ function addNewMenu() {
     }
     $sqlCommand = "insert into inventory values(0, '".$_POST['itemName']."', '".$imageFile."', ".$_POST['price'].", 1, 0);";
     $result = mysqlCommand($sqlCommand);
+}
+
+/**
+ * 
+ */
+function updateMenuOutput(){
+    $sqlCommand = "select * from inventory;";
+    $sql = mysqlCommand($sqlCommand);
+
+    foreach($sql as $value){
+        echo '<tr><td><input type="checkbox" name="'.$value['id'].'_update"></td>';
+        echo '<td><input type="checkbox" name="'.$value['id'].'_onsale" ';
+        echo $value['onsale'] == 1 ? 'checked="checked"></td>' : '></td>';
+        echo '<td><img src="../../images/'.$value['image'].'"></td>';
+        echo '<td id="name"><input type="text" maxlength="12" value="'.$value['name'].'"></td>';
+        echo '<td id="value">\<input type="tel" value="'.$value['price'].'"></td></tr>';
+    }
 }

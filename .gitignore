@@ -1,2 +1,4 @@
 db_info.php
 .htaccess
+*.log
+/images/test.png
