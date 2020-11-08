@@ -25,6 +25,13 @@ h2 {
     padding: 1%;
 }
 
+h3 {
+    margin-top: 3%;
+    padding: 1%;
+    color: red;
+    text-align: center;
+}
+
 p {
     text-align: center;
 }
@@ -36,20 +43,14 @@ form {
     height: 80%;
 }
 
-button {
-    width: 22%;
-    height: 24%;
-    margin-top: 10%;
-    font-size: 20px;
-}
 
 table , td, th {
-	border: 1px solid #595959;
+    border: 1px solid #595959;
 	border-collapse: collapse;
 }
 
 td, th {
-	padding: 3px;
+    padding: 3px;
 	width: 30px;
 	height: 25px;
 }
@@ -61,7 +62,19 @@ table {
 }
 
 th {
-	background: #f0e6cc;
+    background: #f0e6cc;
+}
+
+input {
+    padding: 2%;
+    font-size: 25px;
+}
+
+.button {
+    width: 22%;
+    height: 24%;
+    margin-top: 10%;
+    font-size: 20px;
 }
 
 .int {
@@ -70,4 +83,26 @@ th {
 
 #unitprice, #num, #subtotal {
     width: 15%;
+}
+
+#buy {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: block;
+    z-index: 999;
+    padding: 4px 9px 4px 7px;
+    border-radius: 30px;
+    background-color: #6ed6cf;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+}
+
+#bought {
+    width: 22%;
+    height: 24%;
+    margin-top: 5%;
+    font-size: 20px;
 }

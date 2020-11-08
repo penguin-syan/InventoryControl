@@ -20,7 +20,7 @@ function mysqlCommand($sqlCommand){
  * 取り扱い中のメニューを表示する
  */
 function outputMenu(){
-    $sqlCommand = "select * from inventory;";
+    $sqlCommand = "select * from inventory order by id asc;";
     $sql = mysqlCommand($sqlCommand);
 
     $count = 0;
@@ -54,7 +54,7 @@ function outputMenu(){
  * 取り扱い中メニューの在庫を表示する
  */
 function outputInventory(){
-    $sqlCommand = "select * from inventory;";
+    $sqlCommand = "select * from inventory order by id asc;";
     $sql = mysqlCommand($sqlCommand);
 
     $count = 0;
@@ -88,7 +88,7 @@ function outputInventory(){
  * 販売中のメニューを表形式で販売する．
  */
 function view4purchase(){
-    $sqlCommand = "select * from inventory;";
+    $sqlCommand = "select * from inventory order by id asc;";
     $sql = mysqlCommand($sqlCommand);
 
     $count = 0;
@@ -120,7 +120,7 @@ function view4purchase(){
  * 購入状況をDBに適用する
  */
 function updateInventory_buy(){
-    $sqlCommand = "select * from inventory;";
+    $sqlCommand = "select * from inventory order by id asc ;";
     $sql = mysqlCommand($sqlCommand);
 
     $total = 0;
@@ -133,6 +133,29 @@ function updateInventory_buy(){
                 $total += ($value['price'] * (int)$_POST[$temp]);
                 $result = mysqlCommand("update inventory set num = ".((int)$value[5] - (int)$_POST[$temp])." where id = ".$value[0].";");
                 $result = mysqlCommand("insert into purchaseLog values('".date("Y/m/d H:i:s")."', '".$value['name']."', ".(int)$_POST[$temp].", ".((int)$value['price'] * (int)$_POST[$temp]).");");
+            }
+        }
+    }
+    echo '<tr><th>合計（支払う金額）</th><th colspan="3" class="int">\\'.number_format($total).'</th></tr>';
+}
+
+
+/**
+ * 購入確認
+ */
+function updateInventory_buycheck(){
+    $sqlCommand = "select * from inventory order by id asc;";
+    $sql = mysqlCommand($sqlCommand);
+
+    $total = 0;
+    foreach($sql as $value){
+        //販売中かつ残量が1以上なら，テキストボックス内の数値を確認し，1以上でupdateする．
+        if($value['onsale'] == 1 && $value['num'] > 0){
+            $temp = $value[0].'n';
+            if((int)$_POST[$temp] != 0){
+                echo '<tr><td>'.$value['name'].'</td><td class="int">\\'.number_format($value['price']).'</td><td class="int">'.$_POST[$temp].'</td><td class="int">\\'.$value['price'] * (int)$_POST[$temp].'</td></tr>';
+                echo '<input type="hidden" name="'.$temp.'" value="'.$_POST[$temp].'">';
+                $total += ($value['price'] * (int)$_POST[$temp]);
             }
         }
     }
@@ -161,7 +184,7 @@ function outputLog(){
  * 登録済みのメニューを表示する(addinventory)
  */
 function outputAllMenu(){
-    $sqlCommand = "select * from inventory;";
+    $sqlCommand = "select * from inventory order by id asc;";
     $sql = mysqlCommand($sqlCommand);
 
     $count = 0;
@@ -190,7 +213,7 @@ function outputAllMenu(){
  * 在庫状況をDBに適用する
  */
 function updateInventory(){
-    $sqlCommand = "select * from inventory;";
+    $sqlCommand = "select * from inventory order by id asc;";
     $sql = mysqlCommand($sqlCommand);
 
     foreach($sql as $value){
@@ -228,7 +251,7 @@ function addNewMenu() {
  * 
  */
 function updateMenuOutput(){
-    $sqlCommand = "select * from inventory;";
+    $sqlCommand = "select * from inventory order by id asc;";
     $sql = mysqlCommand($sqlCommand);
 
     foreach($sql as $value){
@@ -237,6 +260,6 @@ function updateMenuOutput(){
         echo $value['onsale'] == 1 ? 'checked="checked"></td>' : '></td>';
         echo '<td><img src="../../images/'.$value['image'].'"></td>';
         echo '<td id="name"><input type="text" maxlength="12" value="'.$value['name'].'"></td>';
-        echo '<td id="value">\<input type="tel" value="'.$value['price'].'"></td></tr>';
+        echo '<td id="value">\<input type="tel" value="'.number_format($value['price']).'"></td></tr>';
     }
 }
