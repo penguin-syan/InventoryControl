@@ -38,6 +38,11 @@ button {
     font-size: 30px;
 }
 
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .button {
     margin-top: 3%;
 }
