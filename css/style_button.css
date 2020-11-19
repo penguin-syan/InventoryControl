@@ -2,7 +2,7 @@
 
 #pageTop {
   position: fixed;
-  bottom: 20px;
+  bottom: 15%;
   right: 20px;
 }
 
@@ -29,7 +29,7 @@
 
 #pageBack{
   position: fixed;
-  bottom: 20px;
+  bottom: 15%;
   left: 20px;
 }
 
