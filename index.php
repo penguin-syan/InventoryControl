@@ -23,6 +23,12 @@ function updateNotice(){
 	fwrite($fp, $_POST['newNotice']);
 	fclose($fp);
 }
+
+require_once './setting.php';
+if($mode == true){
+	echo "メンテナンス中です";
+	return;
+}
 ?>
 
 <!DOCTYPE html>
