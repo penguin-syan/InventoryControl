@@ -1,4 +1,5 @@
 db_info.php
 .htaccess
 *.log
+.DS_Store
 /images/test.png
