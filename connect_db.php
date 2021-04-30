@@ -100,7 +100,7 @@ function view4purchase(){
     $sql = mysqlCommand($sqlCommand);
 
     foreach($sql as $value){
-        if($value['category'] === 'test') continue;
+        // if($value['category'] === 'test') continue;
         $sqlCommand2 = "select * from inventory where category_id = ".$value['category_id']." order by id asc;";
         $sql2 = mysqlCommand($sqlCommand2);
         
@@ -143,11 +143,11 @@ function updateInventory_buy(){
     foreach($sql as $value){
         //販売中かつ残量が1以上なら，テキストボックス内の数値を確認し，1以上でupdateする．
         if($value['onsale'] == 1 && $value['num'] > 0){
-            $temp = $value[0].'n';
+            $temp = $value['id'].'n';
             if((int)$_POST[$temp] != 0){
                 echo '<tr><td>'.$value['name'].'</td><td class="int">\\'.number_format($value['price']).'</td><td class="int">'.$_POST[$temp].'</td><td class="int">\\'.$value['price'] * (int)$_POST[$temp].'</td></tr>';
                 $total += ($value['price'] * (int)$_POST[$temp]);
-                $result = mysqlCommand("update inventory set num = ".((int)$value[5] - (int)$_POST[$temp])." where id = ".$value[0].";");
+                $result = mysqlCommand("update inventory set num = ".((int)$value['num'] - (int)$_POST[$temp])." where id = ".$value['id'].";");
                 $result = mysqlCommand("insert into purchaseLog values('".date("Y/m/d H:i:s")."', '".$value['name']."', ".(int)$_POST[$temp].", ".((int)$value['price'] * (int)$_POST[$temp]).");");
             }
         }
@@ -167,7 +167,7 @@ function updateInventory_buycheck(){
     foreach($sql as $value){
         //販売中かつ残量が1以上なら，テキストボックス内の数値を確認し，1以上でupdateする．
         if($value['onsale'] == 1 && $value['num'] > 0){
-            $temp = $value[0].'n';
+            $temp = $value['id'].'n';
             if((int)$_POST[$temp] != 0){
                 echo '<tr><td>'.$value['name'].'</td><td class="int">\\'.number_format($value['price']).'</td><td class="int">'.$_POST[$temp].'</td><td class="int">\\'.$value['price'] * (int)$_POST[$temp].'</td></tr>';
                 echo '<input type="hidden" name="'.$temp.'" value="'.$_POST[$temp].'">';
