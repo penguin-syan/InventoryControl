@@ -35,7 +35,6 @@
      <form>
      <table border="1px">
      <tr>
-         <th>更新</th>
          <th>販売中</th>
          <th>商品画像</th>
          <th>商品名</th>

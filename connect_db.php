@@ -20,16 +20,16 @@ function mysqlCommand($sqlCommand){
  * 取り扱い中のメニューを表示する
  */
 function outputMenu(){
-    $sqlCommand = "select * from inventory order by id asc;";
+    $sqlCommand = "select * from inventory order by category_id, id asc;";
     $sql = mysqlCommand($sqlCommand);
 
     $count = 0;
     echo "<tr>";
     foreach($sql as $value){
-        if($value[4] == 1){
-            echo '<td>'.$value[1].'<br><img src="../images/'.$value[2].'"><br>';
-            if($value[5] > 0){
-                echo "\\".number_format($value[3])."</td>";
+        if($value['onsale'] == 1){
+            echo '<td>'.$value['name'].'<br><img src="../images/'.$value['image'].'"><br>';
+            if($value['num'] > 0){
+                echo "￥".number_format($value['price'])."</td>";
             }
             else
                 echo "<strong>SOLD OUT</strong></td>";
@@ -255,8 +255,7 @@ function updateMenuOutput(){
     $sql = mysqlCommand($sqlCommand);
 
     foreach($sql as $value){
-        echo '<tr><td><input type="checkbox" name="'.$value['id'].'_update"></td>';
-        echo '<td><input type="checkbox" name="'.$value['id'].'_onsale" ';
+        echo '<tr><td><input type="checkbox" name="'.$value['id'].'_onsale" ';
         echo $value['onsale'] == 1 ? 'checked="checked"></td>' : '></td>';
         echo '<td><img src="../../images/'.$value['image'].'"></td>';
         echo '<td id="name"><input type="text" maxlength="12" value="'.$value['name'].'"></td>';
