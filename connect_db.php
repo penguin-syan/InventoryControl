@@ -20,33 +20,41 @@ function mysqlCommand($sqlCommand){
  * 取り扱い中のメニューを表示する
  */
 function outputMenu(){
-    $sqlCommand = "select * from inventory order by category_id, id asc;";
+    $sqlCommand = "select * from categorize order by category_id asc;";
     $sql = mysqlCommand($sqlCommand);
 
-    $count = 0;
-    echo "<tr>";
     foreach($sql as $value){
-        if($value['onsale'] == 1){
-            echo '<td>'.$value['name'].'<br><img src="../images/'.$value['image'].'"><br>';
-            if($value['num'] > 0){
-                echo "￥".number_format($value['price'])."</td>";
-            }
-            else
-                echo "<strong>SOLD OUT</strong></td>";
-            $count++;
-                
-            if($count % 4 == 0){
-                $count = 0;
-                echo"</tr><tr>";
+        if($value['category'] === "test") continue;
+        $sqlCommand2 = "select * from inventory where category_id = ".$value['category_id']." order by id asc;";
+        $sql2 = mysqlCommand($sqlCommand2);
+
+        echo "<h2>".$value['category']."</h2>";
+        $count = 0;
+        echo "<table border='1'><tr>";
+        foreach($sql2 as $value2){
+            if($value2['onsale'] == 1){
+                echo '<td>'.$value2['name'].'<br><img src="../images/'.$value2['image'].'"><br>';
+                if($value2['num'] > 0){
+                    echo "￥".number_format($value2['price'])."</td>";
+                }
+                else
+                    echo "<strong>SOLD OUT</strong></td>";
+                $count++;
+                    
+                if($count % 4 == 0){
+                    $count = 0;
+                    echo"</tr><tr>";
+                }
             }
         }
+
+        while($count < 4 && $count != 0){
+            echo "<td></td>";
+            $count++;
+        }
+        echo "</tr></table>";
     }
 
-    while($count < 4 && $count != 0){
-        echo "<td></td>";
-        $count++;
-    }
-    echo "</tr>";
 }
 
 
