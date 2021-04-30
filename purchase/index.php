@@ -32,12 +32,10 @@
  <body oncontextmenu="return false;">
      <h1>人間共生システム研究室 食べ物販売 - 購入ページ</h1>
      <form method="POST" action="./purchase_check/index.php">
-        <table border="1px">
             <?php
             require_once '../connect_db.php';
             view4purchase();
             ?>
-        </table>
         <input type="submit" value="💰購入" id="buy">
         
      </form>

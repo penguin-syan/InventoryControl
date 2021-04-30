@@ -96,31 +96,39 @@ function outputInventory(){
  * 販売中のメニューを表形式で販売する．
  */
 function view4purchase(){
-    $sqlCommand = "select * from inventory order by id asc;";
+    $sqlCommand = "select * from categorize order by category_id asc;";
     $sql = mysqlCommand($sqlCommand);
 
-    $count = 0;
-    echo "<tr>";
     foreach($sql as $value){
-        if($value[5] > 0 && $value[4] == 1){
-            echo '<td>'.$value[1].'<br><img src="../images/'.$value[2].'"><br>\\'.number_format($value[3]).'<br>';
-            echo '<input type="button" value="<" id="'.$value[0].'d" onclick="numDown(\''.$value[0].'n\');">';
-            echo '<input type="number" class="inputText" value="0" id="'.$value[0].'n" name="'.$value[0].'n" min="0" max="'.$value[5].'">';
-            echo '<input type="button" value=">" id="'.$value[0].'u" onclick="numUp(\''.$value[0].'n\');"></td>';
+        if($value['category'] === 'test') continue;
+        $sqlCommand2 = "select * from inventory where category_id = ".$value['category_id']." order by id asc;";
+        $sql2 = mysqlCommand($sqlCommand2);
+        
+        echo "<h2>".$value['category']."</h2>";
+        $count = 0;
+        echo "<tr><table border='1'>";
+        foreach($sql2 as $value2){
+            if($value2['num'] > 0 && $value2['onsale'] == 1){
+                echo '<td>'.$value2['name'].'<br><img src="../images/'.$value2['image'].'"><br>\\'.number_format($value2['price']).'<br>';
+                echo '<input type="button" value="<" id="'.$value2['id'].'d" onclick="numDown(\''.$value2['id'].'n\');">';
+                echo '<input type="number" class="inputText" value="0" id="'.$value2['id'].'n" name="'.$value2['id'].'n" min="0" max="'.$value2['num'].'">';
+                echo '<input type="button" value=">" id="'.$value2['id'].'u" onclick="numUp(\''.$value2['id'].'n\');"></td>';
+                $count++;
+            }
+            
+            if($count % 4 == 0){
+                $count = 0;
+                echo"</tr><tr>";
+            }
+        }
+    
+        while($count < 4 && $count != 0){
+            echo "<td></td>";
             $count++;
         }
-        
-        if($count % 4 == 0){
-            $count = 0;
-            echo"</tr><tr>";
-        }
+        echo "</tr></table>";
     }
 
-    while($count < 4 && $count != 0){
-        echo "<td></td>";
-        $count++;
-    }
-    echo "</tr>";
 }
 
 
