@@ -69,6 +69,7 @@ function outputInventory(){
         $sqlCommand2 = "select * from inventory where category_id = ".$value['category_id']." order by id asc;";
         $sql2 = mysqlCommand($sqlCommand2);
 
+        echo "<h2>".$value['category']."</h2>";
         $count = 0;
         echo "<table border='1'><tr>";
         foreach($sql2 as $value2){
