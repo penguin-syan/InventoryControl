@@ -303,7 +303,7 @@ function updateMenuOutput(){
         echo "<table border='1'><tr><th>販売中</th><th>商品画像</th><th>商品名</th><th>価格</th><th>操作</th></tr>";
         foreach($sql2 as $value2){
             echo '<tr><td><input type="checkbox" name="'.$value2['id'].'_onsale" ';
-            echo $value2['onsale'] == 1 ? 'checked="checked" disabled></td>' : '></td>';
+            echo $value2['onsale'] == 1 ? 'checked="checked" disabled></td>' : 'disabled></td>';
             echo '<td><img src="../../images/'.$value2['image'].'"></td>';
             echo '<td>'.$value2['name'].'</td>';
             echo '<td>￥'.number_format($value2['price']).'</td>';
@@ -319,14 +319,30 @@ function outputEditMenu($id){
     $sql = mysqlCommand($sqlCommand);
 
     foreach($sql as $value){
+        echo '<label for="onsale">販売中　：</label>';
+        echo '<select id="onsale" name="onsale">';
+        outputOnsale($id);
+        echo '</select><br>';
         echo '<label for="itemName">商品名　：</label>';
         echo '<input type="text" id="itemName" name="itemName" maxlength="20" size="22" value='.$value['name'].'><br>';
         echo '<label for="category">商品分類：</label>';
-        echo '<select id = "category" name="category">';
+        echo '<select id="category" name="category">';
         outputEditCategorize($id);
         echo '</select><br>';
         echo '<label for="price">価格　　：</label>';
         echo '<input type="number" id="price" name="price" min="0" value='.$value['price'].'><br>';
+    }
+}
+
+function outputOnsale($id){
+    $sqlCommand = "select * from inventory where id = ".$id.";";
+    $sql = mysqlCommand($sqlCommand);
+
+    foreach($sql as $value){
+        if($value['onsale'] == 1)
+            echo "<option value='1' selected>販売中</option><option value='0'>販売休止</option>";
+        else
+            echo "<option value='1'>販売中</option><option value='0' selected>販売休止</option>";
     }
 }
 
@@ -348,6 +364,6 @@ function outputEditCategorize($id){
 
 
 function updateMenu(){
-    $sqlCommand = "update inventory set name = '".$_POST['itemName']."', category_id = ".$_POST['category'].", price = ".$_POST['price']." where id = ".$_POST['id_edit'].";";
+    $sqlCommand = "update inventory set onsale = ".$_POST['onsale'].", name = '".$_POST['itemName']."', category_id = ".$_POST['category'].", price = ".$_POST['price']." where id = ".$_POST['id_edit'].";";
     $result = mysqlCommand($sqlCommand);
 }
