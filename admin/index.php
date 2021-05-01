@@ -11,6 +11,18 @@
 * see https://opensource.org/licenses/MIT
 *=============================================================
  -->
+<?php
+if(isset($_POST['debugsave'])){
+	updateDebug();
+}
+
+function updateDebug(){
+	$passfile = "./setting.txt";
+	$fp = fopen($passfile, 'w');
+	fwrite($fp, $_POST['debugMode']);
+	fclose($fp);
+}
+?>
 
  <!DOCTYPE html>
 
@@ -33,9 +45,21 @@
     <h1>人間共生システム研究室 食べ物販売 - 管理画面</h1>
 
     <div>
-        <form id="toggle">
-            <input type="checkbox" id="debugMode" name="debugMode">
-            <label for="debugMode">デバッグモード（テスト商品表示）</label>
+        <form id="toggle" method="POST">
+            <select id="debugMode" name="debugMode">
+            <?php
+            $passfile = "./setting.txt";
+            $fp = fopen($passfile, 'r');
+            $debug = fgets($fp);
+            fclose($fp);
+
+            if($debug == 1)
+                echo "<option value='1' selected>デバッグモード有効</option><option value='0'>デバッグモード無効</option>";
+            else
+                echo "<option value='1'>デバッグモード有効</option><option value='0' selected>デバッグモード無効</option>";
+            ?>
+            </select>
+            <input type="submit" id="debugsave" name="debugsave" value="保存">
         </form>
     </div>
 
