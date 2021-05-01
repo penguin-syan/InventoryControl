@@ -292,14 +292,23 @@ function outputCategorize() {
  * 
  */
 function updateMenuOutput(){
-    $sqlCommand = "select * from inventory order by id asc;";
+    $sqlCommand = "select * from categorize order by category_id asc;";
     $sql = mysqlCommand($sqlCommand);
 
     foreach($sql as $value){
-        echo '<tr><td><input type="checkbox" name="'.$value['id'].'_onsale" ';
-        echo $value['onsale'] == 1 ? 'checked="checked"></td>' : '></td>';
-        echo '<td><img src="../../images/'.$value['image'].'"></td>';
-        echo '<td id="name"><input type="text" maxlength="12" value="'.$value['name'].'"></td>';
-        echo '<td id="value">\<input type="tel" value="'.number_format($value['price']).'"></td></tr>';
+        $sqlCommand2 = "select * from inventory where category_id = ".$value['category_id']." order by id asc;";
+        $sql2 = mysqlCommand($sqlCommand2);
+
+        echo "<h2>".$value['category']."</h2>";
+        echo "<table border='1'><tr><th>販売中</th><th>商品画像</th><th>商品名</th><th>価格</th></tr>";
+        foreach($sql2 as $value2){
+            echo '<tr><td><input type="checkbox" name="'.$value2['id'].'_onsale" ';
+            echo $value2['onsale'] == 1 ? 'checked="checked"></td>' : '></td>';
+            echo '<td><img src="../../images/'.$value2['image'].'"></td>';
+            echo '<td id="name"><input type="text" maxlength="12" value="'.$value2['name'].'"></td>';
+            echo '<td id="value">￥<input type="tel" value="'.number_format($value2['price']).'"></td></tr>';
+        }
+        echo "</table>";
     }
+
 }
