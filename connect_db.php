@@ -263,6 +263,19 @@ function addNewMenu() {
     $result = mysqlCommand($sqlCommand);
 }
 
+
+/**
+ * 新規メニュー登録時のカテゴリを表示
+ */
+function outputCategorize() {
+    $sqlCommand = "select * from categorize order by category_id asc;";
+    $sql = mysqlCommand($sqlCommand);
+
+    foreach($sql as $value){
+        echo "<option value='".$value['category_id']."'>".$value['category']."</option>";
+    }
+}
+
 /**
  * 
  */
