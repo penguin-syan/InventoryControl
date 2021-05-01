@@ -42,7 +42,6 @@
      ?>
      </form>
      
-     <p id="pageTop"><a href="">↻更新</a></p>
      <p id="pageBack"><a href="../">◁戻る</a></p>
  
  </body>
