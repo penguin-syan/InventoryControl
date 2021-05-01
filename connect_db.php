@@ -313,3 +313,37 @@ function updateMenuOutput(){
     }
 
 }
+
+function outputEditMenu($id){
+    $sqlCommand = "select * from inventory where id = ".$id.";";
+    $sql = mysqlCommand($sqlCommand);
+
+    foreach($sql as $value){
+        echo '<label for="itemName">商品名　：</label>';
+        echo '<input type="text" id="itemName" name="itemName" maxlength="12" size="15" value='.$value['name'].'><br>';
+        echo '<label for="category">商品分類：</label>';
+        echo '<select id = "category" name="category">';
+        outputEditCategorize($id);
+        outputCategorize();
+        echo '</select><br>';
+        echo '<label for="price">価格　　：</label>';
+        echo '<input type="number" id="price" name="price" min="0" value='.$value['price'].'><br>';
+        echo '<input type="submit" name="update" value="更新">';
+    }
+}
+
+function outputEditCategorize($id){
+    $sqlCommand = "select * from categorize order by category_id asc;";
+    $sqlCommand2 = "select category_id from inventory where id = ".$id.";";
+    $sql = mysqlCommand($sqlCommand);
+    $sql2 = mysqlCommand($sqlCommand2);
+
+    foreach($sql2 as $value2){
+        foreach($sql as $value){
+            if($value2['category_id'] == $value['category_id'])
+                echo "<option value='".$value['category_id']."' selected>".$value['category']."</option>";
+            else
+                echo "<option value='".$value['category_id']."'>".$value['category']."</option>";
+        }
+    }
+}
