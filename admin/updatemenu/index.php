@@ -29,7 +29,7 @@
  
  <body oncontextmenu="return false;">
      <h1>人間共生システム研究室 食べ物販売 - メニュー管理</h1>
-     <form>
+     <form method="POST" action="./editmenu/index.php">
      <?php
      require_once '../../connect_db.php';
      updateMenuOutput();
