@@ -33,13 +33,10 @@
  <body oncontextmenu="return false;">
      <h1>人間共生システム研究室 在庫登録</h1>
      <form method="POST" action="../checkInventory/index.php">
-        <table border="1px">
-            <tr>
-                <?php
-                require_once '../../connect_db.php';
-                outputAllMenu();
-                ?>
-            </tr>
+        <?php
+        require_once '../../connect_db.php';
+        outputAllMenu();
+        ?>
         <input type="submit" value="↻更新" id="buy" name="updateInventory">
      </form>
      

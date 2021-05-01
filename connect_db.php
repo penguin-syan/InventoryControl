@@ -106,7 +106,7 @@ function view4purchase(){
         
         echo "<h2>".$value['category']."</h2>";
         $count = 0;
-        echo "<tr><table border='1'>";
+        echo "<table border='1'><tr>";
         foreach($sql2 as $value2){
             if($value2['num'] > 0 && $value2['onsale'] == 1){
                 echo '<td>'.$value2['name'].'<br><img src="../images/'.$value2['image'].'"><br>\\'.number_format($value2['price']).'<br>';
@@ -197,32 +197,38 @@ function outputLog(){
 
 
 /**
- * 登録済みのメニューを表示する(addinventory)
+ * 在庫登録用画面を表示する(addinventory)
  */
 function outputAllMenu(){
-    $sqlCommand = "select * from inventory order by id asc;";
+    $sqlCommand = "select * from categorize order by category_id asc;";
     $sql = mysqlCommand($sqlCommand);
 
-    $count = 0;
-    echo "<tr>";
     foreach($sql as $value){
-        echo '<td>'.$value[1].'<br><img src="../../images/'.$value[2].'"><br>\\'.number_format($value[3]).'<br>';
-        echo '<input type="button" value="<" id="'.$value[0].'d" onclick="numDown(\''.$value[0].'n\');">';
-        echo '<input type="number" class="inputText" value="'.$value['num'].'" id="'.$value[0].'n" name="'.$value[0].'n" min="0">';
-        echo '<input type="button" value=">" id="'.$value[0].'u" onclick="numUp(\''.$value[0].'n\');"></td>';
-        $count++;
-        
-        if($count % 4 == 0){
-            $count = 0;
-            echo"</tr><tr>";
-        }
-    }
+        $sqlCommand2 = "select * from inventory where category_id = ".$value['category_id']." order by id asc;";
+        $sql2 = mysqlCommand($sqlCommand2);
 
-    while($count < 4 && $count != 0){
-        echo "<td></td>";
-        $count++;
+        echo "<h2>".$value['category']."</h2>";
+        $count = 0;
+        echo "<table border='1'><tr>";
+        foreach($sql2 as $value2){
+            echo '<td>'.$value2['name'].'<br><img src="../../images/'.$value2['image'].'"><br>\\'.number_format($value2['price']).'<br>';
+            echo '<input type="button" value="<" id="'.$value2['id'].'d" onclick="numDown(\''.$value2['id'].'n\');">';
+            echo '<input type="number" class="inputText" value="'.$value2['num'].'" id="'.$value2['id'].'n" name="'.$value2['id'].'n" min="0">';
+            echo '<input type="button" value=">" id="'.$value2['id'].'u" onclick="numUp(\''.$value2['id'].'n\');"></td>';
+            $count++;
+            
+            if($count % 4 == 0){
+                $count = 0;
+                echo"</tr><tr>";
+            }
+        }
+    
+        while($count < 4 && $count != 0){
+            echo "<td></td>";
+            $count++;
+        }
+        echo "</tr></table>";
     }
-    echo "</tr>";
 }
 
 /**
@@ -235,8 +241,8 @@ function updateInventory(){
     foreach($sql as $value){
         //販売中なら，テキストボックス内の数値を確認しupdateする．
         if($value['onsale'] == 1){
-            $temp = $value[0].'n';
-            $result = mysqlCommand("update inventory set num = ".((int)$_POST[$temp])." where id = ".$value[0].";");
+            $temp = $value['id'].'n';
+            $result = mysqlCommand("update inventory set num = ".((int)$_POST[$temp])." where id = ".$value['id'].";");
         }
     }
 }
