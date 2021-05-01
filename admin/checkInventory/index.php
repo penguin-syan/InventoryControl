@@ -37,12 +37,10 @@
  
  <body oncontextmenu="return false;">
      <h1>人間共生システム研究室 食べ物販売 - 在庫確認</h1>
-     <table border="1px">
-         <?php
-         require_once '../../connect_db.php';
-         outputInventory();
-         ?>
-     </table>
+    <?php
+    require_once '../../connect_db.php';
+    outputInventory();
+    ?>
      
      <p id="pageTop"><a href="#">△上へ戻る</a></p>
      <p id="pageBack"><a href="../">◁戻る</a></p>

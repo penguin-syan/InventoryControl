@@ -62,33 +62,39 @@ function outputMenu(){
  * 取り扱い中メニューの在庫を表示する
  */
 function outputInventory(){
-    $sqlCommand = "select * from inventory order by id asc;";
+    $sqlCommand = "select * from categorize order by category_id asc;";
     $sql = mysqlCommand($sqlCommand);
 
-    $count = 0;
-    echo "<tr>";
     foreach($sql as $value){
-        if($value[4] == 1){
-            echo '<td>'.$value[1].'<br><img src="../../images/'.$value[2].'"><br>';
-            if($value[5] > 0){
-                echo $value['num']."</td>";
-            }
-            else
-                echo "<strong>SOLD OUT</strong></td>";
-            $count++;
-                
-            if($count % 4 == 0){
-                $count = 0;
-                echo"</tr><tr>";
+        $sqlCommand2 = "select * from inventory where category_id = ".$value['category_id']." order by id asc;";
+        $sql2 = mysqlCommand($sqlCommand2);
+
+        $count = 0;
+        echo "<table border='1'><tr>";
+        foreach($sql2 as $value2){
+            if($value2['onsale'] == 1){
+                echo '<td>'.$value2['name'].'<br><img src="../../images/'.$value2['image'].'"><br>';
+                if($value2['num'] > 0){
+                    echo $value2['num']."</td>";
+                }
+                else
+                    echo "<strong>SOLD OUT</strong></td>";
+                $count++;
+                    
+                if($count % 4 == 0){
+                    $count = 0;
+                    echo"</tr><tr>";
+                }
             }
         }
+    
+        while($count < 4 && $count != 0){
+            echo "<td></td>";
+            $count++;
+        }
+        echo "</tr></table>";
     }
 
-    while($count < 4 && $count != 0){
-        echo "<td></td>";
-        $count++;
-    }
-    echo "</tr>";
 }
 
 
