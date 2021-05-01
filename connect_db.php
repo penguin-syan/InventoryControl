@@ -324,11 +324,9 @@ function outputEditMenu($id){
         echo '<label for="category">商品分類：</label>';
         echo '<select id = "category" name="category">';
         outputEditCategorize($id);
-        outputCategorize();
         echo '</select><br>';
         echo '<label for="price">価格　　：</label>';
         echo '<input type="number" id="price" name="price" min="0" value='.$value['price'].'><br>';
-        echo '<input type="submit" name="update" value="更新">';
     }
 }
 
@@ -346,4 +344,11 @@ function outputEditCategorize($id){
                 echo "<option value='".$value['category_id']."'>".$value['category']."</option>";
         }
     }
+}
+
+
+function updateMenu($id){
+    $sqlCommand = "update inventory set name = '".$_POST['itemName']."', category_id = ".$_POST['category'].", price = ".$_POST['price']." where id = ".$id.";";
+    echo $sqlCommand;
+    $result = mysqlCommand($sqlCommand);
 }

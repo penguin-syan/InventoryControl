@@ -11,6 +11,12 @@
 * see https://opensource.org/licenses/MIT
 *=============================================================
  -->
+ <?php
+	if(isset($_POST['updateMenu'])){
+        require_once '../../connect_db.php';
+        updateMenu($_POST['id_edit']);
+    }
+?>
 
  <!DOCTYPE html>
 

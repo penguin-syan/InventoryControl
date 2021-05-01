@@ -28,12 +28,13 @@
  </head>
  
  <body oncontextmenu="return false;">
-     <h1>人間共生システム研究室 食べ物販売 - 在庫登録</h1>
-     <form method="POST" enctype="multipart/form-data" action="./editmenu.php">
+     <h1>人間共生システム研究室 食べ物販売 - 商品情報変更</h1>
+     <form method="POST" enctype="multipart/form-data" action="../index.php">
      <?php
         require_once '../../../connect_db.php';
         outputEditMenu($_POST['updateMenu']);
-
+        echo '<input type="hidden" name="id_edit" value="'.$_POST['updateMenu'].'">';
+        echo '<input type="submit" name="updateMenu" value="更新">';
      ?>
      </form>
      
