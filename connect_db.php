@@ -303,10 +303,10 @@ function updateMenuOutput(){
         echo "<table border='1'><tr><th>販売中</th><th>商品画像</th><th>商品名</th><th>価格</th><th>操作</th></tr>";
         foreach($sql2 as $value2){
             echo '<tr><td><input type="checkbox" name="'.$value2['id'].'_onsale" ';
-            echo $value2['onsale'] == 1 ? 'checked="checked"></td>' : '></td>';
+            echo $value2['onsale'] == 1 ? 'checked="checked" disabled></td>' : '></td>';
             echo '<td><img src="../../images/'.$value2['image'].'"></td>';
-            echo '<td id="name"><input type="text" maxlength="12" value="'.$value2['name'].'"></td>';
-            echo '<td id="value">￥<input type="tel" value="'.number_format($value2['price']).'"></td>';
+            echo '<td>'.$value2['name'].'</td>';
+            echo '<td>￥'.number_format($value2['price']).'</td>';
             echo '<td><button type="submit" name="updateMenu" value="'.$value2['id'].'">編集</button></td></tr>';
         }
         echo "</table>";
@@ -320,7 +320,7 @@ function outputEditMenu($id){
 
     foreach($sql as $value){
         echo '<label for="itemName">商品名　：</label>';
-        echo '<input type="text" id="itemName" name="itemName" maxlength="12" size="15" value='.$value['name'].'><br>';
+        echo '<input type="text" id="itemName" name="itemName" maxlength="20" size="22" value='.$value['name'].'><br>';
         echo '<label for="category">商品分類：</label>';
         echo '<select id = "category" name="category">';
         outputEditCategorize($id);
@@ -347,8 +347,7 @@ function outputEditCategorize($id){
 }
 
 
-function updateMenu($id){
-    $sqlCommand = "update inventory set name = '".$_POST['itemName']."', category_id = ".$_POST['category'].", price = ".$_POST['price']." where id = ".$id.";";
-    echo $sqlCommand;
+function updateMenu(){
+    $sqlCommand = "update inventory set name = '".$_POST['itemName']."', category_id = ".$_POST['category'].", price = ".$_POST['price']." where id = ".$_POST['id_edit'].";";
     $result = mysqlCommand($sqlCommand);
 }

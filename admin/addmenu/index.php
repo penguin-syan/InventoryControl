@@ -31,7 +31,7 @@
      <h1>人間共生システム研究室 食べ物販売 - 在庫登録</h1>
      <form method="POST" enctype="multipart/form-data" action="addmenu.php">
          <label for="itemName">商品名　：</label>
-         <input type="text" id="itemName" name="itemName" maxlength="12" size="15"><br>
+         <input type="text" id="itemName" name="itemName" maxlength="20" size="22"><br>
          <label for="category">商品分類：</label>
          <select id = "category" name="category">
          <?php
