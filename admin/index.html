@@ -33,18 +33,16 @@
     <h1>人間共生システム研究室 食べ物販売 - 管理画面</h1>
 
     <div>
-        <form>
-            <input type="checkbox" id="maintenanceMode" name="maintenanceMode">
-            <label for="maintenanceMode">メンテナンスモード（購入禁止）</label><br>
+        <form id="toggle">
             <input type="checkbox" id="debugMode" name="debugMode">
             <label for="debugMode">デバッグモード（テスト商品表示）</label>
         </form>
     </div>
 
     <form>
-        <button type="button" class="button" onclick="location.href='./addmenu'">新商品追加</button>
-        <button type="button" class="button" onclick="location.href='./updatemenu'">商品管理</button>
-        <button type="button" class="button" onclick="location.href='./addinventory'">在庫登録</button>
+        <button type="button" class="button_u" onclick="location.href='./addmenu'">新商品追加</button>
+        <button type="button" class="button_u" onclick="location.href='./updatemenu'">商品管理</button>
+        <button type="button" class="button_u" onclick="location.href='./addinventory'">在庫登録</button>
         <button type="button" class="button" onclick="location.href='./checkInventory'">在庫確認</button>
         <button type="button" class="button" onclick="location.href='./purchaseLog'">販売履歴</button>
         <button type="button" class="button" onclick="location.href='./updatenotice'">お知らせ変更</button>
