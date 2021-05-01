@@ -259,7 +259,7 @@ function addNewMenu() {
         echo "ファイルが選択されていません。";
         return;
     }
-    $sqlCommand = "insert into inventory values(0, '".$_POST['itemName']."', '".$imageFile."', ".$_POST['price'].", 1, 0);";
+    $sqlCommand = "insert into inventory values(0, ".$_POST['category'].", '".$_POST['itemName']."', '".$imageFile."', ".$_POST['price'].", 1, 0);";
     $result = mysqlCommand($sqlCommand);
 }
 
