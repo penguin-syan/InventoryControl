@@ -24,7 +24,7 @@ function outputMenu(){
     $sql = mysqlCommand($sqlCommand);
 
     foreach($sql as $value){
-        $passfile = "./admin/setting.txt";
+        $passfile = "../admin/setting.txt";
         $fp = fopen($passfile, 'r');
         $debug = fgets($fp);
         fclose($fp);
@@ -73,15 +73,15 @@ function outputInventory(){
     $sqlCommand = "select * from categorize order by category_id asc;";
     $sql = mysqlCommand($sqlCommand);
 
-    $passfile = "./admin/setting.txt";
+    $passfile = "../setting.txt";
     $fp = fopen($passfile, 'r');
-    echo "\$debug: ".fgets($fp);
+    $debug = fgets($fp);
     fclose($fp);
 
     foreach($sql as $value){
-        // if($debug == "0"){
-        //     if($value['category'] === "test") continue;
-        // }
+        if($debug == "0"){
+            if($value['category'] === "test") continue;
+        }
 
         $sqlCommand2 = "select * from inventory where category_id = ".$value['category_id']." order by id asc;";
         $sql2 = mysqlCommand($sqlCommand2);
@@ -124,7 +124,7 @@ function view4purchase(){
     $sql = mysqlCommand($sqlCommand);
 
     foreach($sql as $value){
-        $passfile = "./admin/setting.txt";
+        $passfile = "../admin/setting.txt";
         $fp = fopen($passfile, 'r');
         $debug = fgets($fp);
         fclose($fp);
@@ -235,7 +235,7 @@ function outputAllMenu(){
     $sql = mysqlCommand($sqlCommand);
 
     foreach($sql as $value){
-        $passfile = "./admin/setting.txt";
+        $passfile = "../setting.txt";
         $fp = fopen($passfile, 'r');
         $debug = fgets($fp);
         fclose($fp);
@@ -330,7 +330,7 @@ function updateMenuOutput(){
     $sql = mysqlCommand($sqlCommand);
 
     foreach($sql as $value){
-        $passfile = "./admin/setting.txt";
+        $passfile = "../setting.txt";
         $fp = fopen($passfile, 'r');
         $debug = fgets($fp);
         fclose($fp);
