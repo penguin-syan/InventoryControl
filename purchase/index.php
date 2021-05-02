@@ -41,6 +41,7 @@
      </form>
      
      <p id="pageBack"><a href="../">◁購入をやめる</a></p>
+     <div id="space"> </div>
  
  </body>
  </html>
