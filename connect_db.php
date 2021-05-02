@@ -345,8 +345,7 @@ function updateMenuOutput(){
         echo "<h2>".$value['category']."</h2>";
         echo "<table border='1'><tr><th width='10%'>販売中</th><th>商品画像</th><th width='55%'>商品名</th><th width='15%'>価格</th><th width='5%'>操作</th></tr>";
         foreach($sql2 as $value2){
-            echo '<tr><td><input type="checkbox" name="'.$value2['id'].'_onsale" ';
-            echo $value2['onsale'] == 1 ? 'checked="checked" disabled></td>' : 'disabled></td>';
+            echo $value2['onsale'] == 1 ? '<tr><td>○</td>' : '<tr><td>×</td>';
             echo '<td><img src="../../images/'.$value2['image'].'"></td>';
             echo '<td>'.$value2['name'].'</td>';
             echo '<td>￥'.number_format($value2['price']).'</td>';
