@@ -24,7 +24,15 @@ function outputMenu(){
     $sql = mysqlCommand($sqlCommand);
 
     foreach($sql as $value){
-        if($value['category'] === "test") continue;
+        $passfile = "./admin/setting.txt";
+        $fp = fopen($passfile, 'r');
+        $debug = fgets($fp);
+        fclose($fp);
+
+        if($debug == 0){
+            if($value['category'] === "test") continue;
+        }
+
         $sqlCommand2 = "select * from inventory where category_id = ".$value['category_id']." order by id asc;";
         $sql2 = mysqlCommand($sqlCommand2);
 
@@ -65,7 +73,16 @@ function outputInventory(){
     $sqlCommand = "select * from categorize order by category_id asc;";
     $sql = mysqlCommand($sqlCommand);
 
+    $passfile = "./admin/setting.txt";
+    $fp = fopen($passfile, 'r');
+    echo "\$debug: ".fgets($fp);
+    fclose($fp);
+
     foreach($sql as $value){
+        // if($debug == "0"){
+        //     if($value['category'] === "test") continue;
+        // }
+
         $sqlCommand2 = "select * from inventory where category_id = ".$value['category_id']." order by id asc;";
         $sql2 = mysqlCommand($sqlCommand2);
 
@@ -107,7 +124,14 @@ function view4purchase(){
     $sql = mysqlCommand($sqlCommand);
 
     foreach($sql as $value){
-        // if($value['category'] === 'test') continue;
+        $passfile = "./admin/setting.txt";
+        $fp = fopen($passfile, 'r');
+        $debug = fgets($fp);
+        fclose($fp);
+
+        if($debug == 0){
+            if($value['category'] === "test") continue;
+        }
         $sqlCommand2 = "select * from inventory where category_id = ".$value['category_id']." order by id asc;";
         $sql2 = mysqlCommand($sqlCommand2);
         
@@ -211,6 +235,15 @@ function outputAllMenu(){
     $sql = mysqlCommand($sqlCommand);
 
     foreach($sql as $value){
+        $passfile = "./admin/setting.txt";
+        $fp = fopen($passfile, 'r');
+        $debug = fgets($fp);
+        fclose($fp);
+
+        if($debug == 0){
+            if($value['category'] === "test") continue;
+        }
+
         $sqlCommand2 = "select * from inventory where category_id = ".$value['category_id']." order by id asc;";
         $sql2 = mysqlCommand($sqlCommand2);
 
@@ -297,11 +330,20 @@ function updateMenuOutput(){
     $sql = mysqlCommand($sqlCommand);
 
     foreach($sql as $value){
+        $passfile = "./admin/setting.txt";
+        $fp = fopen($passfile, 'r');
+        $debug = fgets($fp);
+        fclose($fp);
+
+        if($debug == 0){
+            if($value['category'] === "test") continue;
+        }
+
         $sqlCommand2 = "select * from inventory where category_id = ".$value['category_id']." order by id asc;";
         $sql2 = mysqlCommand($sqlCommand2);
 
         echo "<h2>".$value['category']."</h2>";
-        echo "<table border='1'><tr><th>販売中</th><th>商品画像</th><th>商品名</th><th>価格</th><th>操作</th></tr>";
+        echo "<table border='1'><tr><th width='10%'>販売中</th><th>商品画像</th><th width='55%'>商品名</th><th width='15%'>価格</th><th width='5%'>操作</th></tr>";
         foreach($sql2 as $value2){
             echo '<tr><td><input type="checkbox" name="'.$value2['id'].'_onsale" ';
             echo $value2['onsale'] == 1 ? 'checked="checked" disabled></td>' : 'disabled></td>';
