@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+#rightBottom {
+  height: 25%;
+  width: 30%;
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+  opacity: 0;
+}
+
+#leftBottom{
+  height: 25%;
+  width: 30%;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  opacity: 0;
+}
+
+#leftTop {
+  height: 25%;
+  width: 30%;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  opacity: 0;
+}

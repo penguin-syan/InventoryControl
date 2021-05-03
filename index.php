@@ -31,6 +31,7 @@ function updateNotice(){
 	<title>食べ物販売 - TOP</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="./css/style_top.css">
+	<link rel="stylesheet" href="./css/style_adminButton.css">
 	<script async defer src="https://buttons.github.io/buttons.js"></script>
 	<meta http-equiv="Cache-Control" content="no-cache">
 	<!--
@@ -65,8 +66,13 @@ function updateNotice(){
 	<form>
 		<button type="button" id="menu" class="button" onclick="location.href='./menu'"><img src="./images/menu.png"><br>メニュー</button>
 		<button type="button" id="purchase" class="button" onclick="location.href='./purchase'"><img src="./images/purchase.png"><br>購入</button>
-		<button type="button" id="admin" class="button" onclick="location.href='./admin'"><img src="./images/admin.png"><br>管理</button>
+		<button type="button" id="admin" class="button" onclick="location.href='./admin'" disabled><img src="./images/admin_s.png" id="admin_image"><br>管理</button>
 	</form>
 
+	<input type="button" id="leftTop" value="左上のボタン">
+	<input type="button" id="rightBottom" value="右下のボタン">
+    <input type="button" id="leftBottom" value="左下のボタン">
+	
+	<script type="text/javascript" src="./js/script_adminCommand.js"></script>
 </body>
 </html>
