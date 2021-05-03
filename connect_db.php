@@ -244,7 +244,7 @@ function outputAllMenu(){
             if($value['category'] === "test") continue;
         }
 
-        $sqlCommand2 = "select * from inventory where category_id = ".$value['category_id']." order by id asc;";
+        $sqlCommand2 = "select * from inventory where category_id = ".$value['category_id']." and onsale = 1 order by id asc;";
         $sql2 = mysqlCommand($sqlCommand2);
 
         echo "<h2>".$value['category']."</h2>";
