@@ -24,6 +24,4 @@ function pushButton(num) {
         document.getElementById("admin").disabled = "";
         document.getElementById("admin_image").src = "./images/admin.png";
     }
-
-    console.log(i);
 }
