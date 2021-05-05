@@ -63,11 +63,13 @@ function updateNotice(){
 		</tr>
 	</table>
 	
-	<form>
-		<button type="button" id="menu" class="button" onclick="location.href='./menu'"><img src="./images/menu.png"><br>メニュー</button>
-		<button type="button" id="purchase" class="button" onclick="location.href='./purchase'"><img src="./images/purchase.png"><br>購入</button>
-		<button type="button" id="admin" class="button" onclick="location.href='./admin'" disabled><img src="./images/admin_s.png" id="admin_image"><br>管理</button>
-	</form>
+	<div class="divform">
+		<form>
+			<button type="button" id="menu" class="button" onclick="location.href='./menu'"><img src="./images/menu.png"><br>メニュー</button>
+			<button type="button" id="purchase" class="button" onclick="location.href='./purchase'"><img src="./images/purchase.png"><br>購入</button>
+			<button type="button" id="admin" class="button" onclick="location.href='./admin'" disabled><img src="./images/admin_s.png" id="admin_image"><br>管理</button>
+		</form>
+	</div>
 
 	<input type="button" id="leftTop" value="左上のボタン">
 	<input type="button" id="rightBottom" value="右下のボタン">
