@@ -32,8 +32,12 @@ function updateNotice(){
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="./css/style_top.css">
 	<link rel="stylesheet" href="./css/style_adminButton.css">
+	<link rel="stylesheet" href="./css/style_resetIosButtonStyle.css">
+	<link rel="apple-touch-icon" href="./images/apple-touch-icon.png">
 	<script async defer src="https://buttons.github.io/buttons.js"></script>
 	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+
 	<!--
 	<link rel="icon" href="">
 	<link rel="apple-touch-icon" href="">

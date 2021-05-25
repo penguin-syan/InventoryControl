@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+button[type="submit"],
+button[type="button"] {
+    -webkit-appearance: none;
+    border-radius: 0;
+    background-color: #e2e2e2;
+}
