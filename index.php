@@ -66,12 +66,23 @@ function updateNotice(){
 			</td>
 		</tr>
 	</table>
-	
+
 	<div class="divform">
 		<form>
 			<button type="button" id="menu" class="button" onclick="location.href='./menu'"><img src="./images/menu.png"><br>メニュー</button>
 			<button type="button" id="purchase" class="button" onclick="location.href='./purchase'"><img src="./images/purchase.png"><br>購入</button>
-			<button type="button" id="admin" class="button" onclick="location.href='./admin'" disabled><img src="./images/admin_s.png" id="admin_image"><br>管理</button>
+			<?php
+			$passfile = "./admin/setting.txt";
+			$fp = fopen($passfile, 'r');
+			$debug = fgets($fp);
+			fclose($fp);
+	
+			if($debug == 0)
+				echo '<button type="button" id="admin" class="button" onclick="location.href=\'./admin\'" disabled><img src="./images/admin_s.png" id="admin_image"><br>管理</button>';
+			else
+				echo '<button type="button" id="admin" class="button" onclick="location.href=\'./admin\'"><img src="./images/admin.png" id="admin_image"><br>管理</button>';
+			?>
+			
 		</form>
 	</div>
 
