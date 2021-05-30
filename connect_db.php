@@ -292,10 +292,11 @@ function updateInventory(){
  * 新規メニューを登録する
  */
 function addNewMenu() {
+    //画像ファイルのアップロード
     if (is_uploaded_file($_FILES["upfile"]["tmp_name"])) {
-        $imageFile = date("Ymd-His").$_FILES['upfile']['name'];
-        if (move_uploaded_file ($_FILES["upfile"]["tmp_name"], "../../images/".$imageFile)) {
-           chmod("../../images/".$imageFile, 0644);
+        $imageFile = "../../images/".date("Ymd-His").$_FILES['upfile']['name'];
+        if (move_uploaded_file ($_FILES["upfile"]["tmp_name"], $imageFile)) {
+           chmod($imageFile, 0644);
            echo "メニューを追加しました．";
        } else {
            echo "ファイルをアップロードできません。";
@@ -305,8 +306,14 @@ function addNewMenu() {
         echo "ファイルが選択されていません。";
         return;
     }
+
+    //DBへの登録
     $sqlCommand = "insert into inventory values(0, ".$_POST['category'].", '".$_POST['itemName']."', '".$imageFile."', ".$_POST['price'].", 1, 0);";
     $result = mysqlCommand($sqlCommand);
+
+    require_once 'resize.php';
+    turn($imageFile);
+    resize($imageFile);
 }
 
 
