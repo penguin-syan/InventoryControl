@@ -16,6 +16,7 @@
         require_once '../../connect_db.php';
         updateMenu();
     }
+
     else if(isset($_POST['deleteMenu'])){
         require_once '../../connect_db.php';
         deleteMenu();
@@ -28,7 +29,7 @@
      <title>食べ物販売 - メニュー管理</title>
      <meta charset="UTF-8">
      <link rel="stylesheet" href="../../css/style_updatemenu.css">
-     <link rel="stylesheet" href="../../css/style_button.css"
+     <link rel="stylesheet" href="../../css/style_button.css">
      <meta http-equiv="Cache-Control" content="no-cache">
      <!--
      <link rel="icon" href="">
@@ -51,3 +52,4 @@
  
  </body>
  </html>
+ 

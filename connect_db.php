@@ -413,6 +413,30 @@ function outputEditCategorize($id){
 
 
 function updateMenu(){
+    //画像ファイルのアップロード
+    if (is_uploaded_file($_FILES["upfile"]["tmp_name"])) {
+        $imageFile = date("Ymd-His").$_FILES['upfile']['name'];
+        if (move_uploaded_file ($_FILES["upfile"]["tmp_name"], "../../images/".$imageFile)) {
+           chmod("../../images/".$imageFile, 0644);
+           require_once 'resize.php';
+           turn("../../images/".$imageFile);
+           resize("../../images/".$imageFile);
+
+           $sqlCommand = "select image from inventory where id = ".$_POST['id_edit'].";";
+           $result = mysqlCommand($sqlCommand);
+
+           foreach($result as $value){
+               unlink("../../images/".$value['image']);
+           }
+
+           $sqlCommand = "update inventory set image = '".$imageFile."' where id = ".$_POST['id_edit'].";";
+           $result = mysqlCommand($sqlCommand);
+        } else {
+           echo "ファイルをアップロードできません。";
+           return;
+        }
+    }
+
     $sqlCommand = "update inventory set onsale = ".$_POST['onsale'].", name = '".$_POST['itemName']."', category_id = ".$_POST['category'].", price = ".$_POST['price']." where id = ".$_POST['id_edit'].";";
     $result = mysqlCommand($sqlCommand);
 }

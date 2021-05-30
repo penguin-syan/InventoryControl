@@ -34,6 +34,8 @@
      <?php
         require_once '../../../connect_db.php';
         outputEditMenu($_POST['updateMenu']);
+        echo '<label for="price">画像　　：</label>';
+        echo '<input type="file" name="upfile" size="30" id="upload"><br>';
         echo '<input type="hidden" name="id_edit" value="'.$_POST['updateMenu'].'">';
         echo '<input type="submit" name="updateMenu" value="更新" onclick="update.key.value=\'updateMenu\'">';
         echo '<input type="submit" name="deleteMenu" value="削除" onclick="update.key.value=\'deleteMenu\'">';
