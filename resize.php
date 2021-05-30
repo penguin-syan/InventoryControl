@@ -1,8 +1,4 @@
 <?php
-//$imageFile = $argv[1];
-//turn($imageFile);
-//resize($imageFile);
-
 function resize($imageFile){
     list($width, $height) = getimagesize($imageFile);
     $baseImage = "";
