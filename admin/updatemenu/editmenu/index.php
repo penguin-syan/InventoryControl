@@ -19,6 +19,7 @@
      <meta charset="UTF-8">
      <link rel="stylesheet" href="../../../css/style_addmenu.css">
      <link rel="stylesheet" href="../../../css/style_button.css">
+     <script type="text/javascript" src="../../../js/script_checkSubmit.js"></script>
      <meta http-equiv="Cache-Control" content="no-cache">
      <!--
      <link rel="icon" href="">
@@ -29,13 +30,14 @@
  
  <body oncontextmenu="return false;">
      <h1>人間共生システム研究室 食べ物販売 - 商品情報変更</h1>
-     <form method="POST" enctype="multipart/form-data" action="../index.php">
+     <form name="update" method="POST" enctype="multipart/form-data" action="../index.php" onsubmit="return checkSubmit();">
      <?php
         require_once '../../../connect_db.php';
         outputEditMenu($_POST['updateMenu']);
         echo '<input type="hidden" name="id_edit" value="'.$_POST['updateMenu'].'">';
-        echo '<input type="submit" name="updateMenu" value="更新">';
-        echo '<input type="submit" name="deleteMenu" value="削除">';
+        echo '<input type="submit" name="updateMenu" value="更新" onclick="update.key.value=\'updateMenu\'">';
+        echo '<input type="submit" name="deleteMenu" value="削除" onclick="update.key.value=\'deleteMenu\'">';
+        echo '<input type="hidden" name="key" value="">';
      ?>
      </form>
      
