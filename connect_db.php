@@ -424,7 +424,6 @@ function updateMenu(){
 
            $sqlCommand = "select image from inventory where id = ".$_POST['id_edit'].";";
            $result = mysqlCommand($sqlCommand);
-
            foreach($result as $value){
                unlink("../../images/".$value['image']);
            }
@@ -443,6 +442,12 @@ function updateMenu(){
 
 
 function deleteMenu(){
+    $sqlCommand = "select image from inventory where id = ".$_POST['id_edit'].";";
+    $result = mysqlCommand($sqlCommand);
+    foreach($result as $value){
+        unlink("../../images/".$value['image']);
+    }
+    
     $sqlCommand = "delete from inventory where id = ".$_POST['id_edit'].";";
     $result = mysqlCommand($sqlCommand);
 }
