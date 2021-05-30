@@ -38,6 +38,7 @@ button {
     width: 28%;
     height: 60%;
     font-size: 40px;
+    vertical-align: top;
 }
 
 img {
