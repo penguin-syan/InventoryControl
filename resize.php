@@ -19,6 +19,9 @@ function resize($imageFile){
         imagejpeg($image, $imageFile);
     else if(exif_imagetype($imageFile) == IMAGETYPE_PNG)
         imagepng($image, $imageFile);
+
+    imagedestroy($baseImage);
+    imagedestroy($image);
 }
 
 function turn($imageFile){
@@ -67,4 +70,6 @@ function turn($imageFile){
         imagejpeg($baseImage, $imageFile);
     else if(exif_imagetype($imageFile) == IMAGETYPE_PNG)
         imagepng($baseImage, $imageFile);
+
+    imagedestroy($baseImage);
 }
