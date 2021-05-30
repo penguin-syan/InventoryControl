@@ -35,6 +35,7 @@
         outputEditMenu($_POST['updateMenu']);
         echo '<input type="hidden" name="id_edit" value="'.$_POST['updateMenu'].'">';
         echo '<input type="submit" name="updateMenu" value="更新">';
+        echo '<input type="submit" name="deleteMenu" value="削除">';
      ?>
      </form>
      

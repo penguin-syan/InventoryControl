@@ -16,6 +16,10 @@
         require_once '../../connect_db.php';
         updateMenu();
     }
+    else if(isset($_POST['deleteMenu'])){
+        require_once '../../connect_db.php';
+        deleteMenu();
+    }
 ?>
 
  <!DOCTYPE html>

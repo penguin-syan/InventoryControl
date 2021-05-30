@@ -416,3 +416,9 @@ function updateMenu(){
     $sqlCommand = "update inventory set onsale = ".$_POST['onsale'].", name = '".$_POST['itemName']."', category_id = ".$_POST['category'].", price = ".$_POST['price']." where id = ".$_POST['id_edit'].";";
     $result = mysqlCommand($sqlCommand);
 }
+
+
+function deleteMenu(){
+    $sqlCommand = "delete from inventory where id = ".$_POST['id_edit'].";";
+    $result = mysqlCommand($sqlCommand);
+}
