@@ -21,6 +21,7 @@
      <link rel="stylesheet" href="../../../css/style_button.css">
      <script type="text/javascript" src="../../../js/script_checkSubmit.js"></script>
      <meta http-equiv="Cache-Control" content="no-cache">
+     <meta name="apple-mobile-web-app-capable" content="yes">
      <!--
      <link rel="icon" href="">
      <link rel="apple-touch-icon" href="">

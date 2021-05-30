@@ -31,6 +31,7 @@
      <link rel="stylesheet" href="../../css/style_updatemenu.css">
      <link rel="stylesheet" href="../../css/style_button.css">
      <meta http-equiv="Cache-Control" content="no-cache">
+     <meta name="apple-mobile-web-app-capable" content="yes">
      <!--
      <link rel="icon" href="">
      <link rel="apple-touch-icon" href="">
