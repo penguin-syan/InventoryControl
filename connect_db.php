@@ -140,7 +140,7 @@ function view4purchase(){
         echo "<table border='1'><tr>";
         foreach($sql2 as $value2){
             if($value2['num'] > 0 && $value2['onsale'] == 1){
-                echo '<td>'.$value2['name'].'<br><img src="../images/'.$value2['image'].'"><br>\\'.number_format($value2['price']).'<br>';
+                echo '<td>'.$value2['name'].'<br><img src="../images/'.$value2['image'].'"><br>￥'.number_format($value2['price']).'<br>';
                 echo '<input type="button" value="<" id="'.$value2['id'].'d" onclick="numDown(\''.$value2['id'].'n\');">';
                 echo '<input type="number" class="inputText" value="0" id="'.$value2['id'].'n" name="'.$value2['id'].'n" min="0" max="'.$value2['num'].'">';
                 echo '<input type="button" value=">" id="'.$value2['id'].'u" onclick="numUp(\''.$value2['id'].'n\');"></td>';
