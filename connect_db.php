@@ -1,9 +1,22 @@
 <?php
+/**
+*=============================================================
+* Project Name  : penguin-syan/InventoryControl
+* File Name     : ./connect_db.php
+* Encoding      : UTF-8
+*
+* Copyright (c) 2020-2021 YutoMitsuta. All rights reserved.
+*
+* Released under the MIT license
+* see https://opensource.org/licenses/MIT
+*=============================================================
+*/
 header('Content-Type: text/html; charset=UTF-8');
 require_once 'db_info.php';
 
 /**
  * データベース上でsqlコマンドを実行する
+ * @param String $sqlCommand データベース上で実行するSQLコマンド
  */
 function mysqlCommand($sqlCommand){
     extract($GLOBALS);
@@ -330,7 +343,7 @@ function outputCategorize() {
 }
 
 /**
- * 
+ * 商品情報の更新用に，すべての商品の一覧を表示する
  */
 function updateMenuOutput(){
     $sqlCommand = "select * from categorize order by category_id asc;";
@@ -363,6 +376,11 @@ function updateMenuOutput(){
 
 }
 
+
+/**
+ * 商品情報の更新用ページを表示する
+ * @param int $id 情報を更新する商品のid
+ */
 function outputEditMenu($id){
     $sqlCommand = "select * from inventory where id = ".$id.";";
     $sql = mysqlCommand($sqlCommand);
@@ -383,6 +401,12 @@ function outputEditMenu($id){
     }
 }
 
+
+/**
+ * 商品の販売状況を表示する
+ * @param int $id 表示する商品のid
+ * @see outputEditMenu()
+ */
 function outputOnsale($id){
     $sqlCommand = "select * from inventory where id = ".$id.";";
     $sql = mysqlCommand($sqlCommand);
@@ -395,6 +419,12 @@ function outputOnsale($id){
     }
 }
 
+
+/**
+ * 商品の分類をドロップダウンリストで表示する
+ * @param int $id 表示する商品のid
+ * @see outputEditMenu()
+ */
 function outputEditCategorize($id){
     $sqlCommand = "select * from categorize order by category_id asc;";
     $sqlCommand2 = "select category_id from inventory where id = ".$id.";";
@@ -412,6 +442,9 @@ function outputEditCategorize($id){
 }
 
 
+/**
+ * 商品情報の更新
+ */
 function updateMenu(){
     //画像ファイルのアップロード
     if (is_uploaded_file($_FILES["upfile"]["tmp_name"])) {
@@ -436,11 +469,15 @@ function updateMenu(){
         }
     }
 
+    //商品情報の更新内容をDBに反映
     $sqlCommand = "update inventory set onsale = ".$_POST['onsale'].", name = '".$_POST['itemName']."', category_id = ".$_POST['category'].", price = ".$_POST['price']." where id = ".$_POST['id_edit'].";";
     $result = mysqlCommand($sqlCommand);
 }
 
 
+/**
+ * 商品の削除
+ */
 function deleteMenu(){
     $sqlCommand = "select image from inventory where id = ".$_POST['id_edit'].";";
     $result = mysqlCommand($sqlCommand);

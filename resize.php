@@ -1,4 +1,22 @@
+<!--
+*=============================================================
+* Project Name  : penguin-syan/InventoryControl
+* File Name     : ./resize.php
+* Encoding      : UTF-8
+* Creation Date : 2021/05/30
+*
+* Copyright (c) 2021 YutoMitsuta. All rights reserved.
+*
+* Released under the MIT license
+* see https://opensource.org/licenses/MIT
+*=============================================================
+ -->
+
 <?php
+/**
+ * 画像のサイズを変更する
+ * @param String $imageFile サイズを変更する画像のファイル名
+ */
 function resize($imageFile){
     list($width, $height) = getimagesize($imageFile);
     $baseImage = "";
@@ -20,6 +38,11 @@ function resize($imageFile){
     imagedestroy($image);
 }
 
+
+/**
+ * Exifタグのデータをもとに画像を回転する
+ * @param String $imageFile 回転する画像のファイル名
+ */
 function turn($imageFile){
     $exif_data = exif_read_data($imageFile);
     $baseImage = "";

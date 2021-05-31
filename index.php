@@ -13,10 +13,14 @@
  -->
 
 <?php
-	if(isset($_POST['updateNotice'])){
+//通知のアップデート処理を行う
+if(isset($_POST['updateNotice'])){
 	updateNotice();
 }
 
+/**
+ * 通知のアップデート処理を行う
+ */
 function updateNotice(){
 	$passfile = "./admin/updatenotice/notice.txt";
 	$fp = fopen($passfile, 'w');
