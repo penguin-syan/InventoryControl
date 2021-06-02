@@ -307,9 +307,9 @@ function updateInventory(){
 function addNewMenu() {
     //画像ファイルのアップロード
     if (is_uploaded_file($_FILES["upfile"]["tmp_name"])) {
-        $imageFile = "../../images/".date("Ymd-His").$_FILES['upfile']['name'];
-        if (move_uploaded_file ($_FILES["upfile"]["tmp_name"], $imageFile)) {
-           chmod($imageFile, 0644);
+        $imageFile = date("Ymd-His").$_FILES['upfile']['name'];
+        if (move_uploaded_file ($_FILES["upfile"]["tmp_name"], "../../images/".$imageFile)) {
+           chmod("../../images/".$imageFile, 0644);
            echo "メニューを追加しました．";
        } else {
            echo "ファイルをアップロードできません。";
@@ -325,8 +325,8 @@ function addNewMenu() {
     $result = mysqlCommand($sqlCommand);
 
     require_once 'resize.php';
-    turn($imageFile);
-    resize($imageFile);
+    turn("../../images/".$imageFile);
+    resize("../../images/".$imageFile);
 }
 
 
