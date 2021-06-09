@@ -18,6 +18,7 @@
      <title>食べ物販売 - 購入完了</title>
      <meta charset="UTF-8">
      <link rel="stylesheet" href="../../css/style_purchased.css">
+     <link rel="stylesheet" href="../../css/style_resetIosButtonStyle.css">
      <meta http-equiv="Cache-Control" content="no-cache">
      <meta name="apple-mobile-web-app-capable" content="yes">
      <!--
