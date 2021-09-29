@@ -19,6 +19,7 @@
      <meta charset="UTF-8">
      <link rel="stylesheet" href="../../css/style_purchased.css">
      <link rel="stylesheet" href="../../css/style_resetIosButtonStyle.css">
+     <script type="text/javascript" src="../../js/script_purchased.js"></script>
      <meta http-equiv="Cache-Control" content="no-cache">
      <meta name="apple-mobile-web-app-capable" content="yes">
      <!--
@@ -28,7 +29,7 @@
       -->
  </head>
  
- <body oncontextmenu="return false;">
+ <body oncontextmenu="return false;" onload="loaded()">
      <h1>人間共生システム研究室 食べ物販売 - 購入完了</h1>
      <h2>購入品一覧・支払い金額</h2>
      <table>
@@ -46,8 +47,11 @@
      <form>
          <button type="button" id="bought" onclick="location.href='../../'">はじめに戻る</button>
      </form>
+
+     <dialog>
+         <p>購入完了</p>
+         <button onclick="audioPlay()">閉じる</button>
+     </dialog>
  
  </body>
  </html>
-
- <script type="text/javascript">alert('購入完了');</script>
