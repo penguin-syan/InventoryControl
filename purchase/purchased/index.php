@@ -20,7 +20,6 @@
      <link rel="stylesheet" href="../../css/style_purchased.css">
      <link rel="stylesheet" href="../../css/style_resetIosButtonStyle.css">
      <script type="text/javascript" src="../../js/script_purchased.js"></script>
-     <script type="text/javascript" src="../../js/howler.core.js"></script>
      <meta http-equiv="Cache-Control" content="no-cache">
      <meta name="apple-mobile-web-app-capable" content="yes">
      <!--
@@ -50,9 +49,13 @@
      </form>
 
      <div id="dialog">
-         <p>購入完了</p>
-         <button onclick="audioPlay()">閉じる</button>
+         <div>
+             <p id="msg-dialog">購入完了</p>
+             <button onclick="audioPlay()" id="close-dialog">閉じる</button>
+         </div>
      </div>
+
+     <div id="dialog-bg"></div>
 
      <audio preload="auto" id="koharu">
          <source src="../../audio/01.mp3">
