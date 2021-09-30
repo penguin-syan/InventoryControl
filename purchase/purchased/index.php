@@ -58,7 +58,9 @@
      <div id="dialog-bg"></div>
 
      <audio preload="auto" id="koharu">
-         <source src="../../audio/01.mp3">
+         <?php
+           echo '<source src="../../audio/01.mp3">'
+         ?>
      </audio>
  
  </body>
