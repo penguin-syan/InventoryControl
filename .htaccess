@@ -1,0 +1,23 @@
+<Files ~ "\.(html|php|css|js|pdf)$">
+Header add Pragma "no-cache"
+Header set Cache-Control no-cache
+</Files>
+
+<Files ~ "^db_info\.php$">
+deny from all
+</Files>
+
+RewriteEngine on
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+#ErrorDocument 503 /503.html
+
+#ErrorDocument 503 /HSSLab/maintenance.html
+
+#<IfModule mod_rewrite.c>
+#  RewriteEngine On
+#  RewriteCond %{REQUEST_URI} !=/HSSLab/maintenance.html
+#  RewriteCond %{REMOTE_ADDR} !=153.242.79.8
+#  RewriteRule ^.*$ - [R=503,L]
+#</IfModule>
