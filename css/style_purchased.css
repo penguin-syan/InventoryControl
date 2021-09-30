@@ -15,6 +15,8 @@ body {
     height: 100%;
     background-color: lightyellow;
     user-select: none;
+    position: relative;
+    z-index: 1;
 }
 
 h1 {
@@ -40,7 +42,6 @@ form {
     text-align: center;
     margin: auto;
     width: 80%;
-    height: 80%;
 }
 
 
@@ -101,8 +102,43 @@ input {
 }
 
 #bought {
-    width: 22%;
-    height: 24%;
+    padding: 30px;
     margin-top: 5%;
     font-size: 20px;
+}
+
+#dialog-bg {
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    z-index: 2;
+}
+
+#dialog {
+    background-color: whitesmoke;
+    border: 3px black solid;
+    position: absolute;
+    text-align: center;
+    z-index: 3;
+    height: 40%;
+    width: 45%;
+    top: 30%;
+    left: 27.5%;
+}
+
+#close-dialog {
+    margin-top: 1em;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 25px;
+}
+
+#msg-dialog {
+    font-size: 30px;
+    margin-top: 10%;
 }
