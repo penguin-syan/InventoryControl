@@ -2,10 +2,10 @@
 /**
 *=============================================================
 * Project Name  : penguin-syan/InventoryControl
-* File Name     : ./connect_db.php
+* File Name     : connect_db.php
 * Encoding      : UTF-8
 *
-* Copyright (c) 2020-2021 YutoMitsuta. All rights reserved.
+* Copyright (c) 2020-2021 penguin_syan. All rights reserved.
 *
 * Released under the MIT license
 * see https://opensource.org/licenses/MIT

@@ -1,11 +1,11 @@
 <!--
 *=============================================================
 * Project Name  : penguin-syan/InventoryControl
-* File Name     : ./index.html
+* File Name     : index.html
 * Encoding      : UTF-8
 * Creation Date : 2020/10/20
 *
-* Copyright (c) 2020 YutoMitsuta. All rights reserved.
+* Copyright (c) 2020-2021 penguin_syan. All rights reserved.
 *
 * Released under the MIT license
 * see https://opensource.org/licenses/MIT

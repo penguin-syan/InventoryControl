@@ -2,11 +2,11 @@
 /**
 *=============================================================
 * Project Name  : penguin-syan/InventoryControl
-* File Name     : ./resize.php
+* File Name     : resize.php
 * Encoding      : UTF-8
 * Creation Date : 2021/05/30
 *
-* Copyright (c) 2021 YutoMitsuta. All rights reserved.
+* Copyright (c) 2021 penguin_syan. All rights reserved.
 *
 * Released under the MIT license
 * see https://opensource.org/licenses/MIT
