@@ -53,7 +53,7 @@ function updateNotice(){
 	<header class="site-header">
 		<h1>人間共生システム研究室 食べ物販売</h1>
 		<a href="https://github.com/penguin-syan/InventoryControl/" class="header-link" id="right-button">
-			<img src="./images/GitHub-Mark.svg"> 
+			<img src="./images/GitHub-Mark.svg" id="github-mark">
 			<img src="./images/GitHub_Logo.svg">
 		</a>
 	</header>
