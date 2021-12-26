@@ -44,3 +44,7 @@ img {
 strong {
     color: red;
 }
+
+.site-header {
+    position: fixed;
+}
