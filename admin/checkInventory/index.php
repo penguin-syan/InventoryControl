@@ -41,7 +41,6 @@
     <header class="site-header">
         <a onclick="history.back()" class="header-link">＜</a>
         <h1>在庫確認</h1>
-        <a href="./" class="header-link" id="buy-button">🛒購入</a>
     </header>
 
     <div class="header-margin"></div>

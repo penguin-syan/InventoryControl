@@ -36,7 +36,7 @@
     <header class="site-header">
         <a onclick="history.back()" class="header-link">＜</a>
         <h1>在庫登録</h1>
-        <a href="./" class="header-link" id="buy-button">---</a>
+        <a href="./" class="header-link" id="right-button">---</a>
     </header>
 
     <div class="header-margin"></div>
