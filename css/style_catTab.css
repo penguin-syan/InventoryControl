@@ -8,7 +8,7 @@
 }
 
 .category_tab {
-    width: 20%;
+    width: calc(20% - 2px);
     height: 50px;
     background-color: darkgrey;
     line-height: 50px;
@@ -39,8 +39,23 @@ input:checked + .category_tab {
 .menu_class {
     display: none;
     width: 100%;
+    padding-top: 1%;
 }
    
 input:checked + .category_tab + .menu_class {
     display: block;
+}
+
+.menu_item {
+    background-color: white;
+    width: 95%;
+    height: 180px;
+    margin: auto;
+    display: flex;
+    border: 0.5px solid black;
+}
+
+img {
+    height: 80%;
+    width: auto;
 }
