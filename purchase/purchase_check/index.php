@@ -31,7 +31,7 @@
  
  <body oncontextmenu="return false;">
     <header class="site-header">
-        <a href="../" class="header-link">＜</a>
+        <a onclick="history.back()" class="header-link">＜</a>
         <h1>購入確認</h1>
         <!--<a href="./" class="header-link" id="buy-button">🛒購入</a>-->
     </header>
@@ -56,7 +56,5 @@
         <input type="submit" value="💰購入" id="buy">
      </form>
 
-     <p id="pageBack"><a type="button" onclick="history.back()">◁修正する</a></p>
- 
- </body>
+    </body>
  </html>

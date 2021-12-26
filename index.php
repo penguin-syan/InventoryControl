@@ -53,10 +53,11 @@ function updateNotice(){
 <body oncontextmenu="return false;">
 	<header class="site-header">
 		<h1>人間共生システム研究室 食べ物販売</h1>
+		<a href="https://github.com/penguin-syan/InventoryControl/" class="header-link" id="buy-button">GitHub</a>
 	</header>
 
 	<div class="header-margin"></div>
-	
+
 	<div class="github">
 		<a class="github-button" href="https://github.com/penguin-syan/InventoryControl" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star penguin-syan/InventoryControl on GitHub">Star</a>
 		<a class="github-button" href="https://github.com/penguin-syan/InventoryControl/issues" data-icon="octicon-issue-opened" data-size="large" data-show-count="true" aria-label="Issue penguin-syan/InventoryControl on GitHub">Issue</a>
