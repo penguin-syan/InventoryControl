@@ -17,6 +17,7 @@
  <head>
      <title>食べ物販売 - 新規商品登録</title>
      <meta charset="UTF-8">
+     <link rel="stylesheet" href="../../../css/style_header.css">
      <link rel="stylesheet" href="../../../css/style_addmenu.css">
      <link rel="stylesheet" href="../../../css/style_button.css">
      <script type="text/javascript" src="../../../js/script_checkSubmit.js"></script>
@@ -30,7 +31,12 @@
  </head>
  
  <body oncontextmenu="return false;">
-     <h1>人間共生システム研究室 食べ物販売 - 商品情報変更</h1>
+    <header class="site-header">
+        <a onclick="history.back()" class="header-link">＜</a>
+        <h1>商品情報変更</h1>
+    </header>
+
+    <div class="header-margin"></div>
      <form name="update" method="POST" enctype="multipart/form-data" action="../index.php" onsubmit="return checkSubmit();">
      <?php
         require_once '../../../connect_db.php';
@@ -44,7 +50,5 @@
      ?>
      </form>
      
-     <p id="pageBack"><a href="../">◁戻る</a></p>
- 
  </body>
  </html>
