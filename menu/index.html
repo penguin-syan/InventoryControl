@@ -18,6 +18,7 @@
              食べ物販売 - メニュー
          </title>
          <meta charset="UTF-8">
+         <link rel="stylesheet" href="../css/style_header.css">
          <link rel="stylesheet" href="../css/style_menu.css">
          <link rel="stylesheet" href="../css/style_button.css">
          <meta http-equiv="Cache-Control" content="no-cache">
@@ -28,16 +29,14 @@
              -->
      </head>
      <body oncontextmenu="return false;">
-        <header>
-            <h1 class="site-header">人間共生システム研究室 食べ物販売 - メニュー</h1>
-            <nav class="gnav">
-                <ul class="gnav_menu">
-                    <li class="gnav_menu_item">選択肢1</li>
-                    <li class="gnav_menu_item">選択肢2</li>
-                </ul>
-            </nav>
-
+        <header class="site-header">
+            <a href="./" class="header-link">＜</a>
+            <h1>メニュー</h1>
+            <a href="./" class="header-link" id="buy-button">🛒購入</a>
         </header>
+
+        <div class="header-margin"></div>
+
          <h2>
              ごはん
          </h2>
@@ -427,13 +426,6 @@
                  <td></td>
              </tr>
          </table>
-         <p id="pageTop">
-             <a href="../purchase">購入画面へ進む▷</a>
-         </p>
-         <p id="pageBack">
-             <a href="../">◁戻る</a>
-         </p>
-         <div id="space"></div>
      </body>
  </html>
  
