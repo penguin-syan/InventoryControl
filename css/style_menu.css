@@ -23,6 +23,10 @@ table {
     margin-bottom: 2%;
 }
 
+table > img {
+    width: 70%;
+}
+
 td {
     width: 20%;
     font-size: 30px;
