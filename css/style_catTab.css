@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+.area {
+    width: 90%;
+    margin: auto;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.category_tab {
+    width: calc(100%/5);
+    height: 50px;
+    background-color: darkgrey;
+    line-height: 50px;
+    font-size: 15px;
+    text-align: center;
+    display: block;
+    float: left;
+    order: -1;
+}
+
+input[name="cat_tab"] {
+    display: none;
+}
+
+input:checked + .category_tab {
+    background-color: cadetblue;
+    color: aliceblue;
+}
+
+.menu_class {
+    display: none;
+    width: 100%;
+}
+   
+input:checked + .category_tab + .menu_class {
+    display: block;
+}
