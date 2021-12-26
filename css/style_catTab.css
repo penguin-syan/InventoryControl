@@ -8,7 +8,7 @@
 }
 
 .category_tab {
-    width: calc(100%/5);
+    width: 20%;
     height: 50px;
     background-color: darkgrey;
     line-height: 50px;
@@ -17,6 +17,10 @@
     display: block;
     float: left;
     order: -1;
+    border-top: 1px solid whitesmoke;
+    border-left: 1px solid whitesmoke;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
 }
 
 input[name="cat_tab"] {
@@ -26,6 +30,10 @@ input[name="cat_tab"] {
 input:checked + .category_tab {
     background-color: cadetblue;
     color: aliceblue;
+    border-top: 1px solid gray;
+    border-left: 1px solid gray;
+    border-right: 1px solid whitesmoke;
+    border-bottom: 1px solid whitesmoke;
 }
 
 .menu_class {
