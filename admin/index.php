@@ -79,8 +79,5 @@ function updateDebug(){
         <button type="button" class="button" onclick="location.href='./purchaseLog'">販売履歴</button>
         <button type="button" class="button" onclick="location.href='./updatenotice'">お知らせ変更</button>
     </form>
-
-    <p id="pageBack"><a href="../">◁戻る</a></p>
-
 </body>
 </html>

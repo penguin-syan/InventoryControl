@@ -35,7 +35,7 @@
 <body oncontextmenu="return false;">
     <header class="site-header">
         <a href="../" class="header-link">＜</a>
-        <h1>メニュー</h1>
+        <h1>商品購入</h1>
     </header>
 
     <div class="header-margin"></div>    
@@ -49,9 +49,5 @@
         <input type="submit" value="💰購入" id="buy">
         
      </form>
-     
-     <p id="pageBack"><a href="../">◁購入をやめる</a></p>
-     <div id="space"> </div>
- 
  </body>
  </html>
