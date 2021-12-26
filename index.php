@@ -39,7 +39,6 @@ function updateNotice(){
 	<link rel="stylesheet" href="./css/style_adminButton.css">
 	<link rel="stylesheet" href="./css/style_resetIosButtonStyle.css">
 	<link rel="apple-touch-icon" href="./images/apple-touch-icon.png">
-	<script async defer src="https://buttons.github.io/buttons.js"></script>
 	<meta http-equiv="Cache-Control" content="no-cache">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 
@@ -53,15 +52,13 @@ function updateNotice(){
 <body oncontextmenu="return false;">
 	<header class="site-header">
 		<h1>人間共生システム研究室 食べ物販売</h1>
-		<a href="https://github.com/penguin-syan/InventoryControl/" class="header-link" id="right-button"><img src="./images/GitHub_Logo.svg" height="80%"></a>
+		<a href="https://github.com/penguin-syan/InventoryControl/" class="header-link" id="right-button">
+			<img src="./images/GitHub-Mark.svg">
+			<img src="./images/GitHub_Logo.svg">
+		</a>
 	</header>
 
 	<div class="header-margin"></div>
-
-	<div class="github">
-		<a class="github-button" href="https://github.com/penguin-syan/InventoryControl" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star penguin-syan/InventoryControl on GitHub">Star</a>
-		<a class="github-button" href="https://github.com/penguin-syan/InventoryControl/issues" data-icon="octicon-issue-opened" data-size="large" data-show-count="true" aria-label="Issue penguin-syan/InventoryControl on GitHub">Issue</a>
-	</div>
 
 	<table border="0" bgcolor="#006A00" cellpadding="5" cellspacing="0" style="border:thick ridge maroon;width:540;height:20;">
 		<tr>

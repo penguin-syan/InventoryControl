@@ -37,6 +37,10 @@ button {
     vertical-align: top;
 }
 
+#right-button > img{
+    max-width: 80%;
+}
+
 img {
     max-width: 50%;
     max-height: 50%;
