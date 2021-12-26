@@ -19,7 +19,6 @@
      <meta charset="UTF-8">
      <link rel="stylesheet" href="../css/style_header.css">
      <link rel="stylesheet" href="../css/style_menu.css">
-     <link rel="stylesheet" href="../css/style_button.css">
      <meta http-equiv="Cache-Control" content="no-cache">
      <meta name="apple-mobile-web-app-capable" content="yes">
      <!--
@@ -30,15 +29,14 @@
  </head>
  
  <body oncontextmenu="return false;">
- <body oncontextmenu="return false;">
         <header class="site-header">
-            <a href="./" class="header-link">＜</a>
+            <a href="../" class="header-link">＜</a>
             <h1>メニュー</h1>
-            <a href="./" class="header-link" id="buy-button">🛒購入</a>
+            <a href="../purchase/" class="header-link" id="buy-button">🛒購入</a>
         </header>
 
         <div class="header-margin"></div>
-        
+
          <?php
          require_once '../connect_db.php';
          outputMenu();

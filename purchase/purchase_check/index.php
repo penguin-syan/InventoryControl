@@ -17,6 +17,7 @@
  <head>
      <title>食べ物販売 - 購入確認</title>
      <meta charset="UTF-8">
+     <link rel="stylesheet" href="../css/style_header.css">
      <link rel="stylesheet" href="../../css/style_purchased.css">
      <link rel="stylesheet" href="../../css/style_button.css">
      <meta http-equiv="Cache-Control" content="no-cache">
@@ -29,7 +30,14 @@
  </head>
  
  <body oncontextmenu="return false;">
-     <h1>人間共生システム研究室 食べ物販売 - 購入確認</h1>
+    <header class="site-header">
+        <a href="../" class="header-link">＜</a>
+        <h1>購入確認</h1>
+        <!--<a href="./" class="header-link" id="buy-button">🛒購入</a>-->
+    </header>
+
+    <div class="header-margin"></div>
+
      <h2>購入確認</h2>
      <form method="POST" action="../purchased/index.php">
      <table>

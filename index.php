@@ -34,6 +34,7 @@ function updateNotice(){
 <head>
 	<title>食べ物販売 - TOP</title>
 	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../css/style_header.css">
 	<link rel="stylesheet" href="./css/style_top.css">
 	<link rel="stylesheet" href="./css/style_adminButton.css">
 	<link rel="stylesheet" href="./css/style_resetIosButtonStyle.css">
@@ -50,7 +51,12 @@ function updateNotice(){
 </head>
 
 <body oncontextmenu="return false;">
-	<h1>人間共生システム研究室 食べ物販売 - トップ</h1>
+	<header class="site-header">
+		<h1>人間共生システム研究室 食べ物販売</h1>
+	</header>
+
+	<div class="header-margin"></div>
+	
 	<div class="github">
 		<a class="github-button" href="https://github.com/penguin-syan/InventoryControl" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star penguin-syan/InventoryControl on GitHub">Star</a>
 		<a class="github-button" href="https://github.com/penguin-syan/InventoryControl/issues" data-icon="octicon-issue-opened" data-size="large" data-show-count="true" aria-label="Issue penguin-syan/InventoryControl on GitHub">Issue</a>
