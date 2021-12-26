@@ -46,3 +46,7 @@ a:active {
     text-decoration: none;
     color: white;
 }
+
+#right-button {
+    margin: 0 0 0 auto;
+}
