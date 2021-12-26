@@ -17,7 +17,7 @@
  <head>
      <title>食べ物販売 - 購入確認</title>
      <meta charset="UTF-8">
-     <link rel="stylesheet" href="../css/style_header.css">
+     <link rel="stylesheet" href="../../css/style_header.css">
      <link rel="stylesheet" href="../../css/style_purchased.css">
      <link rel="stylesheet" href="../../css/style_button.css">
      <meta http-equiv="Cache-Control" content="no-cache">

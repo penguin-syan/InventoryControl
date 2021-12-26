@@ -28,6 +28,7 @@
  <head>
      <title>食べ物販売 - メニュー管理</title>
      <meta charset="UTF-8">
+     <link rel="stylesheet" href="../../css/style_header.css">
      <link rel="stylesheet" href="../../css/style_updatemenu.css">
      <link rel="stylesheet" href="../../css/style_button.css">
      <meta http-equiv="Cache-Control" content="no-cache">
@@ -40,7 +41,13 @@
  </head>
  
  <body oncontextmenu="return false;">
-     <h1>人間共生システム研究室 食べ物販売 - メニュー管理</h1>
+    <header class="site-header">
+        <a onclick="history.back()" class="header-link">＜</a>
+        <h1>メニュー管理</h1>
+    </header>
+
+    <div class="header-margin"></div>
+
      <form method="POST" action="./editmenu/index.php">
      <?php
      require_once '../../connect_db.php';
@@ -48,9 +55,6 @@
      ?>
      </form>
      
-     <p id="pageBack"><a href="../">◁戻る</a></p>
-     <div id="space"> </div>
- 
  </body>
  </html>
  

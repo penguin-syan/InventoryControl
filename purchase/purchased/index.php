@@ -17,7 +17,7 @@
 <head>
    <title>食べ物販売 - 購入完了</title>
    <meta charset="UTF-8">
-   <link rel="stylesheet" href="../css/style_header.css">
+   <link rel="stylesheet" href="../../css/style_header.css">
    <link rel="stylesheet" href="../../css/style_purchased.css">
    <link rel="stylesheet" href="../../css/style_resetIosButtonStyle.css">
    <script type="text/javascript" src="../../js/script_purchased.js"></script>
