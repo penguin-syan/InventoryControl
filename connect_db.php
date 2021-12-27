@@ -36,6 +36,7 @@ function outputMenu(){
     $sqlCommand = "select * from categorize order by category_id asc;";
     $sql = mysqlCommand($sqlCommand);
 
+    $rad_count = 0;
     foreach($sql as $value){
         $passfile = "../admin/setting.txt";
         $fp = fopen($passfile, 'r');
@@ -49,7 +50,10 @@ function outputMenu(){
         $sqlCommand2 = "select * from inventory where category_id = ".$value['category_id']." order by id asc;";
         $sql2 = mysqlCommand($sqlCommand2);
 
-        echo '<input type="radio" name="cat_tab" id="tab_'.$value['category'].'">';
+        if($rad_count == 0)
+            echo '<input type="radio" name="cat_tab" id="tab_'.$value['category'].'" checked>';
+        else
+            echo '<input type="radio" name="cat_tab" id="tab_'.$value['category'].'">';
         echo '<label class="category_tab" for="tab_'.$value['category'].'">'.$value['category'].'</label>';
         echo '<div class="menu_class">';
         
@@ -75,6 +79,7 @@ function outputMenu(){
             $count++;
         }
         echo '</div>';
+        $rad_count ++;
     }
 
 }
