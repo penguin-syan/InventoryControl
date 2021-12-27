@@ -53,7 +53,7 @@
             ?>
         </table>
         <h3>注意：購入処理は完了していません．購入を決定するには，購入ボタンを押してください．</h3>
-        <input type="submit" value="💰購入" id="buy">
+        <input type="submit" value="💰購入" id="buy" class="right-button-up">
      </form>
 
     </body>
