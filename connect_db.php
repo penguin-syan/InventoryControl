@@ -49,7 +49,6 @@ function outputMenu(){
         $sqlCommand2 = "select * from inventory where category_id = ".$value['category_id']." order by id asc;";
         $sql2 = mysqlCommand($sqlCommand2);
 
-        echo "<h2>".$value['category']."</h2>";
         echo '<input type="radio" name="cat_tab" id="tab_'.$value['category'].'">';
         echo '<label class="category_tab" for="tab_'.$value['category'].'">'.$value['category'].'</label>';
         echo '<div class="menu_class">';
@@ -58,7 +57,6 @@ function outputMenu(){
                 echo '<img src="../images/'.$value2['image'].'">';
                 echo '<div><h2>'.$value2['name'].'<h2>';
                 if($value2['num'] > 0){
-                    echo "￥".number_format($value2['price'])."</td>";
                     echo '<h3>￥'.number_format($value2['price']).'</h3></div></div>';
                 }
                 else
