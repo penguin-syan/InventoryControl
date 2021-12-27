@@ -46,10 +46,12 @@
 
     <div class="header-margin"></div>
 
-    <?php
-    require_once '../../connect_db.php';
-    outputInventory();
-    ?>
+    <div class="area">
+        <?php
+        require_once '../../connect_db.php';
+        outputInventory();
+        ?>
+    </div>
      
      <p id="pageTop"><a href="#">△上へ戻る</a></p>
      <div id="space"> </div>
