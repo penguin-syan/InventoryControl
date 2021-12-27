@@ -59,6 +59,18 @@ input:checked + .category_tab + .menu_class {
     margin-bottom: 1%;
 }
 
+.menu_item {
+    display: flex;
+    align-items: center;
+    float: left;
+    background-color: lightyellow;
+    width: 30%;
+    height: 150px;
+    margin: auto;
+    border: 0.5px solid lightyellow;
+    margin-bottom: 1%;
+}
+
 img {
     margin-right: 2%;
     margin-left: 3%;

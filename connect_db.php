@@ -52,6 +52,8 @@ function outputMenu(){
         echo '<input type="radio" name="cat_tab" id="tab_'.$value['category'].'">';
         echo '<label class="category_tab" for="tab_'.$value['category'].'">'.$value['category'].'</label>';
         echo '<div class="menu_class">';
+        
+        $count = 0;
         foreach($sql2 as $value2){
             if($value2['onsale'] == 1){
                 echo '<div class="menu_item">';
@@ -62,7 +64,15 @@ function outputMenu(){
                 }
                 else
                     echo "<h3><strong>SOLD OUT</strong></h3></div></div>";
+                $count ++;
+
+                if($count % 4 == 0)
+                    $count = 0;
             }
+        }
+        while($count < 4 && $count != 0){
+            echo '<div class="menu_item_space"></div>';
+            $count++;
         }
         echo '</div>';
     }
