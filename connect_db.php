@@ -120,7 +120,7 @@ function outputInventory(){
                 echo '<img src="../../images/'.$value2['image'].'">';
                 echo '<div><h2>'.$value2['name'].'</h2>';
                 if($value2['num'] > 0){
-                    echo '<h3>￥'.number_format($value2['num']).'</h3></div></div>';
+                    echo '<h3>残り：'.number_format($value2['num']).'</h3></div></div>';
                 }
                 else
                     echo "<h3><strong>SOLD OUT</strong></h3></div></div>";
