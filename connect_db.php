@@ -94,7 +94,7 @@ function outputInventory(){
 
     $rad_count = 0;
     foreach($sql as $value){
-        $passfile = "../admin/setting.txt";
+        $passfile = "../setting.txt";
         $fp = fopen($passfile, 'r');
         $debug = fgets($fp);
         fclose($fp);
@@ -117,7 +117,7 @@ function outputInventory(){
         foreach($sql2 as $value2){
             if($value2['onsale'] == 1){
                 echo '<div class="menu_item">';
-                echo '<img src="../images/'.$value2['image'].'">';
+                echo '<img src="../../images/'.$value2['image'].'">';
                 echo '<div><h2>'.$value2['name'].'</h2>';
                 if($value2['num'] > 0){
                     echo '<h3>￥'.number_format($value2['num']).'</h3></div></div>';
