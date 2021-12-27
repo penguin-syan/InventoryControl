@@ -54,13 +54,14 @@ function outputMenu(){
         echo '<div class="menu_class">';
         foreach($sql2 as $value2){
             if($value2['onsale'] == 1){
+                echo '<div class="menu_item">';
                 echo '<img src="../images/'.$value2['image'].'">';
                 echo '<div><h2>'.$value2['name'].'</h2>';
                 if($value2['num'] > 0){
-                    echo '<h3>￥'.number_format($value2['price']).'</h3></div>';
+                    echo '<h3>￥'.number_format($value2['price']).'</h3></div></div>';
                 }
                 else
-                    echo "<h3><strong>SOLD OUT</strong></h3></div>";
+                    echo "<h3><strong>SOLD OUT</strong></h3></div></div>";
             }
         }
         echo '</div>';
