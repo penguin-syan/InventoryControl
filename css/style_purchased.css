@@ -62,11 +62,6 @@ th {
     background: #f0e6cc;
 }
 
-input {
-    padding: 2%;
-    font-size: 25px;
-}
-
 .button {
     width: 22%;
     height: 24%;
@@ -80,21 +75,6 @@ input {
 
 #unitprice, #num, #subtotal {
     width: 15%;
-}
-
-#buy {
-    position: fixed;
-    bottom: 15%;
-    right: 20px;
-    display: block;
-    z-index: 999;
-    padding: 4px 9px 4px 7px;
-    border-radius: 30px;
-    background-color: #6ed6cf;
-    color: #fff;
-    font-weight: bold;
-    text-decoration: none;
-    text-align: center;
 }
 
 #bought {
