@@ -37,7 +37,7 @@ button {
     vertical-align: top;
 }
 
-#right-button > img{
+#right-button > object{
     max-width: 80%;
     height: 30%;
 }
