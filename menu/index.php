@@ -18,6 +18,7 @@
      <title>食べ物販売 - メニュー</title>
      <meta charset="UTF-8">
      <link rel="stylesheet" href="../css/style_header.css">
+     <link rel="stylesheet" href="../css/style_catTab.css">
      <link rel="stylesheet" href="../css/style_menu.css">
      <meta http-equiv="Cache-Control" content="no-cache">
      <meta name="apple-mobile-web-app-capable" content="yes">
@@ -37,10 +38,13 @@
 
         <div class="header-margin"></div>
 
-         <?php
-         require_once '../connect_db.php';
-         outputMenu();
-         ?>
+        <div class="area">
+            <?php
+            require_once '../connect_db.php';
+            outputMenu();
+            ?>
+        </div>
+
      
      <p id="pageTop"><a href="../purchase">購入画面へ進む▷</a></p>
      <p id="pageBack"><a href="../">◁戻る</a></p>
