@@ -43,7 +43,7 @@ input:checked + .category_tab {
 }
    
 input:checked + .category_tab + .menu_class {
-    display: block;
+    display: flex;
 }
 
 .menu_item {
