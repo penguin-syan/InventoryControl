@@ -40,8 +40,13 @@ h1 {
 }
 
 .right-button-up {
-    font-size: 23px;
+    position: fixed;
     display: flex;
+    width: 100%;
+    height: 10%;
+    background-color: #6ed6cf;
+
+    font-size: 23px;
     justify-content: center;
     align-items: center;
     border-right: 2px solid gray;
