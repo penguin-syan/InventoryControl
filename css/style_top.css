@@ -40,6 +40,7 @@ button {
 #right-button > object{
     max-width: 80%;
     height: 30%;
+    pointer-events: none;
 }
 
 img {
