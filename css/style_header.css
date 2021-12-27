@@ -39,6 +39,18 @@ h1 {
     padding-right: 2ex;
 }
 
+.right-button-up {
+    font-size: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 2px solid gray;
+    border-left: 2px solid whitesmoke;
+    border-bottom: 2px solid gray;
+    padding-left: 2ex;
+    padding-right: 2ex;
+}
+
 a,
 a:visited,
 a:hover,

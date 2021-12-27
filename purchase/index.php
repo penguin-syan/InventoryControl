@@ -33,7 +33,6 @@
  </head>
  
 <body oncontextmenu="return false;">
-    <form method="POST" action="./purchase_check/index.php">
     <header class="site-header">
         <a href="../" class="header-link">＜</a>
         <h1>商品購入</h1>
@@ -42,13 +41,12 @@
 
     <div class="header-margin"></div>    
 
-
+    <form method="POST" action="./purchase_check/index.php">
             <?php
             require_once '../connect_db.php';
             view4purchase();
             ?>
-        <input type="submit" value="💰購入" id="buy">
-        
-     </form>
+        <input type="submit" value="💰購入" id="buy" class="right-button-up">
+    </form>
  </body>
  </html>
