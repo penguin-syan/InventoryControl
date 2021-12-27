@@ -59,7 +59,7 @@ input:checked + .category_tab + .menu_class {
     margin-bottom: 1%;
 }
 
-.menu_item {
+.menu_item_space {
     display: flex;
     align-items: center;
     float: left;
