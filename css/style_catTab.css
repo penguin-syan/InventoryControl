@@ -44,21 +44,24 @@ input:checked + .category_tab {
    
 input:checked + .category_tab + .menu_class {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .menu_item {
     display: flex;
     align-items: center;
+    float: left;
     background-color: white;
     width: 30%;
     height: 150px;
     margin: auto;
     border: 0.5px solid black;
+    margin-bottom: 1%;
 }
 
 img {
     margin-right: 2%;
-    margin-left: 2%;
-    height: 80%;
+    margin-left: 3%;
+    height: 65%;
     width: auto;
 }
