@@ -24,6 +24,7 @@
      <title>食べ物販売 - 在庫確認</title>
      <meta charset="UTF-8">
      <link rel="stylesheet" href="../../css/style_header.css">
+     <link rel="stylesheet" href="../../css/style_catTab.css">
      <link rel="stylesheet" href="../../css/style_menu.css">
      <link rel="stylesheet" href="../../css/style_button.css">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
