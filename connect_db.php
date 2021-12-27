@@ -136,6 +136,9 @@ function outputInventory(){
         }
         echo '</div>';
         $rad_count ++;
+
+        if($sql == null)
+            echo '<strong>このジャンルで取り扱い中の商品はありません</strong>';
     }
 
 }
