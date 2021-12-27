@@ -36,7 +36,6 @@
     <header class="site-header">
         <a href="../" class="header-link">＜</a>
         <h1>商品購入</h1>
-        <a href="./purchase_check/" class="header-link" id="right-button">💰購入</a>
     </header>
 
     <div class="header-margin"></div>    
