@@ -17,23 +17,6 @@ body {
     user-select: none;
 }
 
-table {
-    width: 80%;
-    margin: auto;
-    margin-bottom: 2%;
-}
-
-td > img {
-    width: 70%;
-    height: auto;
-}
-
-td {
-    width: 20%;
-    font-size: 30px;
-    text-align: center;
-}
-
 strong {
     color: red;
 }

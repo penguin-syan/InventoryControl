@@ -21,22 +21,41 @@ h2 {
     padding-left: 10%;
 }
 
-table {
-    width: 80%;
-    margin: auto;
-    margin-bottom: 2%;
+form {
+    height: 88%;
 }
 
-td {
-    height: 100%;
-    width: 20%;
-    font-size: 30px;
-    text-align: center;
+.area {
+    width: 65%;
+    margin-left: 2%;
+    float: left;
 }
 
-img {
-    max-height: 25%;
-    max-width: 70%;
+.right_area {
+    width: calc(25% - 2px);
+    height: 88%;
+    margin-left: 2%;
+    margin-right: 2%;
+    float: right;
+    border: 1px solid black;
+    margin-top: 0;
+    padding: 2%;
+    background-color: white;
+}
+
+.right_area > h2 {
+    padding: 0;
+}
+
+.category_tab {
+    width: calc(25% - 2px);
+}
+
+.basket-item {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2%;
+    border: 1px solid black;
 }
 
 .inputText {

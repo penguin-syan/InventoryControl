@@ -40,6 +40,9 @@ h1 {
 }
 
 .right-button-up {
+    -webkit-appearance: none;
+    margin: 0;
+
     height: 10%;
     right: 0px;
     top: 0px;
@@ -48,7 +51,7 @@ h1 {
     display: flex;
     background-color: #6ed6cf;
     color: white;
-
+    
     font-size: 23px;
     justify-content: center;
     align-items: center;
