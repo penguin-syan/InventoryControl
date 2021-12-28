@@ -57,15 +57,17 @@ form {
 
 .basket-item {
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
     padding: 2%;
     border: 1px solid black;
+    height: 10%;
 }
 
 .basket-item > img {
-    margin-right: 2%;
-    margin-left: 3%;
-    height: 30%;
+    margin-right: 3%;
+    margin-left: 2%;
+    height: 80%;
     width: auto;
 }
 
