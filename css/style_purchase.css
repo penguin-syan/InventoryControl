@@ -61,14 +61,19 @@ form {
     flex-wrap: wrap;
     padding: 2%;
     border: 1px solid black;
-    height: 10%;
+    height: 15%;
 }
 
 .basket-item > img {
     margin-right: 3%;
     margin-left: 2%;
+    height: auto;
+    width: 28%;
+}
+
+.basket-item-count {
     height: 80%;
-    width: auto;
+    width: 65%;
 }
 
 .inputText {
@@ -93,8 +98,8 @@ input[type="button"]  :hover {
 input[type="button"] {
     border-radius: 50%;
     line-height: 20px;
-    width: 20px;
-    height: 20px;
+    width: 13%;
+    height: 30%;
     padding: 0;
 }
 
