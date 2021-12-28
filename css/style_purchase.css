@@ -51,11 +51,22 @@ form {
     width: calc(25% - 2px);
 }
 
+.menu_item {
+    width: 45%;
+}
+
 .basket-item {
     display: flex;
     flex-wrap: wrap;
     padding: 2%;
     border: 1px solid black;
+}
+
+.basket-item > img {
+    margin-right: 2%;
+    margin-left: 3%;
+    height: 30%;
+    width: auto;
 }
 
 .inputText {
