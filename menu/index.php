@@ -44,11 +44,7 @@
             outputMenu();
             ?>
         </div>
-
-     
-     <p id="pageTop"><a href="../purchase">購入画面へ進む▷</a></p>
-     <p id="pageBack"><a href="../">◁戻る</a></p>
-     <div id="space"></div>
+    <div id="space"></div>
  
  </body>
  </html>

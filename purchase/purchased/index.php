@@ -57,7 +57,7 @@
    <div id="dialog">
       <div>
             <p id="msg-dialog">購入完了</p>
-            <button type="button" onclick="audioPlay()" id="close-dialog">閉じる</button>
+            <button type="button" onclick="audioPlay();" id="close-dialog">閉じる</button>
       </div>
    </div>
 
