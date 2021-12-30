@@ -19,9 +19,7 @@
      <meta charset="UTF-8">
      <link rel="stylesheet" href="../css/style_header.css">
      <link rel="stylesheet" href="../css/style_purchase.css">
-     <link rel="stylesheet" href="../css/style_button.css">
      <link rel="stylesheet" href="../css/style_resetIosButtonStyle.css">
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
      <script type="text/javascript" src="../js/script_num.js" charset="UTF-8"></script>
      <meta http-equiv="Cache-Control" content="no-cache">
      <meta name="apple-mobile-web-app-capable" content="yes">
