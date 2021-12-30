@@ -56,12 +56,11 @@ form {
 }
 
 .basket-item {
-    display: flex;
     align-items: center;
     flex-wrap: wrap;
-    padding: 2%;
+    padding: 4%;
     border: 1px solid black;
-    height: 15%;
+    height: 12%;
 }
 
 .basket-item > img {
@@ -71,13 +70,18 @@ form {
     width: 28%;
 }
 
-.basket-item-count {
-    height: 80%;
-    width: 65%;
+.basket-item > h3 {
+    height: 60%;
+}
+
+.basket-item-counter {
+    height: 35%;
+    text-align: right;
 }
 
 .inputText {
     width: 3em;
+    font-size: 16px;
     text-align: center;
 }
 
@@ -99,7 +103,7 @@ input[type="button"] {
     border-radius: 50%;
     line-height: 20px;
     width: 13%;
-    height: 30%;
+    height: 100%;
     padding: 0;
 }
 
