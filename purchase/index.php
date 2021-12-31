@@ -48,8 +48,8 @@
         ?>
     </div>
 
-    <form method="POST" action="./purchase_check/index.php">
-        <div class="right_area">
+    <div class="right_area">
+        <form method="POST" action="./purchase_check/index.php">
             <input type="submit" value="💰購入" id="buy" class="right-button-up">
             <h2>購入内容</h2>
             <div class="basket-item" id="basket-item-1">
@@ -60,7 +60,7 @@
                     <input type="button" value="+" onclick="numUp('1n');">
                 </div>
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
  </body>
  </html>
