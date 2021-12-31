@@ -148,6 +148,7 @@ function view4purchase(){
     $sqlCommand = "select * from categorize order by category_id asc;";
     $sql = mysqlCommand($sqlCommand);
 
+    $rad_count = 0;
     foreach($sql as $value){
         $passfile = "../admin/setting.txt";
         $fp = fopen($passfile, 'r');
@@ -160,29 +161,37 @@ function view4purchase(){
         $sqlCommand2 = "select * from inventory where category_id = ".$value['category_id']." order by id asc;";
         $sql2 = mysqlCommand($sqlCommand2);
         
-        echo "<h2>".$value['category']."</h2>";
+        if($rad_count == 0)
+            echo '<input type="radio" name="cat_tab" id="tab_'.$value['category'].'" checked>';
+        else
+            echo '<input type="radio" name="cat_tab" id="tab_'.$value['category'].'">';
+        echo '<label class="category_tab" for="tab_'.$value['category'].'">'.$value['category'].'</label>';
+        echo '<div class="menu_class">';
+
         $count = 0;
-        echo "<table border='1'><tr>";
         foreach($sql2 as $value2){
             if($value2['num'] > 0 && $value2['onsale'] == 1){
-                echo '<td>'.$value2['name'].'<br><img src="../images/'.$value2['image'].'"><br>￥'.number_format($value2['price']).'<br>';
-                echo '<input type="button" value="<" id="'.$value2['id'].'d" onclick="numDown(\''.$value2['id'].'n\');">';
-                echo '<input type="number" class="inputText" value="0" id="'.$value2['id'].'n" name="'.$value2['id'].'n" min="0" max="'.$value2['num'].'">';
-                echo '<input type="button" value=">" id="'.$value2['id'].'u" onclick="numUp(\''.$value2['id'].'n\');"></td>';
+                echo '<div class="menu_item" onclick="addItem('.$value2['id'].', \''.$value2['name'].'\');">';
+                echo '<img src="../images/'.$value2['image'].'">';
+                echo '<div>';
+                echo '<h2>'.$value2['name'].'</h2>';
+                echo '<h3>￥'.$value2['price'].'</h3>';
+                echo '</div>';
+                echo '</div>';
                 $count++;
             }
             
             if($count % 4 == 0){
                 $count = 0;
-                echo"</tr><tr>";
             }
         }
     
         while($count < 4 && $count != 0){
-            echo "<td></td>";
+            echo '<div class="menu_item_space"></div>';
             $count++;
         }
-        echo "</tr></table>";
+        echo "</div>";
+        $rad_count ++;
     }
 
 }

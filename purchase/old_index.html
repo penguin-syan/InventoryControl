@@ -1,0 +1,76 @@
+<!--
+*=============================================================
+* Project Name	: penguin-syan/InventoryControl
+* File Name			: purchase/index.php
+* Encoding			: UTF-8
+* Creation Date : 2020/10/21
+*
+* Copyright (c) 2020-2021 penguin_syan. All rights reserved.
+*
+* Released under the MIT license
+* see https://opensource.org/licenses/MIT
+*=============================================================
+ -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            食べ物販売 - 購入
+        </title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../css/style_header.css">
+        <link rel="stylesheet" href="../css/style_catTab.css">
+        <link rel="stylesheet" href="../css/style_purchase.css">
+        <link rel="stylesheet" href="../css/style_button.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script type="text/javascript" src="../js/script_purchase.js" charset="UTF-8"></script>
+        <meta http-equiv="Cache-Control" content="no-cache">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <!--
+            <link rel="icon" href="">
+            <link rel="apple-touch-icon" href="">
+            <script type="text/javascript" src=""></script>
+            -->
+    </head>
+    <body oncontextmenu="return false;">
+        <header class="site-header">
+            <a href="../" class="header-link">＜</a>
+            <h1>商品購入</h1>
+        </header>
+        <div class="header-margin"></div>
+        <div class="area">
+            <input type="radio" name="cat_tab" id="tab_test" checked>
+            <label class="category_tab" for="tab_test">test</label>
+            <div class="menu_class">
+                <div class="menu_item" onclick="alert('test');">
+                    <img src="../images/test.png">
+                    <div>
+                        <h2>test</h2>
+                        <h3>￥100</h3>
+                    </div>
+                </div>
+                <div class="menu_item" onclick="addItem(10, 'test2');">
+                    <img src="../images/test.png">
+                    <div>
+                        <h2>test2</h2>
+                        <h3>￥150</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form method="post" action="./purchase_check/index.php">
+            <div class="right_area">
+                <input type="submit" value="💰購入" id="buy" class="right-button-up">
+                <h2>購入内容</h2>
+                <div class="basket-item" id="basket-item-1">
+                    <h3>ライスバーガー（牛カルビ）</h3>
+                    <div class="basket-item-counter">
+                        <input type="button" value="-" onclick="numDown('1n');">
+                        <input type="tel" value="1" id="1n" class="inputText">
+                        <input type="button" value="+" onclick="numUp('1n');">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>
