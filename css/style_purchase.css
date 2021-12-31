@@ -18,7 +18,7 @@ body {
 }
 
 form {
-    height: 88%;
+    height: 100%;
 }
 
 .area {
@@ -29,14 +29,15 @@ form {
 
 .right_area {
     width: calc(25% - 2px);
-    height: 88%;
+    height: 80vh;
     margin-left: 2%;
     margin-right: 2%;
     float: right;
     border: 1px solid black;
-    margin-top: 0;
     padding: 2%;
     background-color: white;
+    position: sticky;
+    top: 12%;
 }
 
 .right_area > h2 {
