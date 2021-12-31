@@ -70,11 +70,11 @@ function outputMenu(){
                     echo "<h3><strong>SOLD OUT</strong></h3></div></div>";
                 $count ++;
 
-                if($count % 4 == 0)
+                if($count % 3 == 0)
                     $count = 0;
             }
         }
-        while($count < 4 && $count != 0){
+        while($count < 3 && $count != 0){
             echo '<div class="menu_item_space"></div>';
             $count++;
         }
@@ -181,12 +181,12 @@ function view4purchase(){
                 $count++;
             }
             
-            if($count % 4 == 0){
+            if($count % 2 == 0){
                 $count = 0;
             }
         }
     
-        while($count < 4 && $count != 0){
+        while($count == 1){
             echo '<div class="menu_item_space"></div>';
             $count++;
         }

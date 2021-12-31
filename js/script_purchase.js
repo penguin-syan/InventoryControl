@@ -7,7 +7,7 @@ function addItem(id, item_name, max_item_num){
             '<div class="basket-item-counter" id = "basket-item-counter-' + id + '"></div>');
         $('#basket-item-counter-' + id).append(
             '<input type="button" value="-" onclick="numDown(\'' + id + 'n\');">',
-            '<input type="number" class="inputText" value="1" id="' + id + 'n" name="' + id + 'n" min="0"></input>',
+            '<input type="number" class="inputText" value="1" id="' + id + 'n" name="' + id + 'n" min="0" max="' + max_item_num + '"></input>',
             '<input type="button" value="+" onclick="numUp(\'' + id + 'n\');">'
         );
     }
