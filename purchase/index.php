@@ -48,7 +48,7 @@
         ?>
     </div>
 
-    <form method="POST" action="./purchase_check/index.php">
+    <form method="POST" action="./purchase_check/">
         <div class="right_area">
             <input type="submit" value="💰購入" id="buy" class="right-button-up">
             <h2>購入内容</h2>
