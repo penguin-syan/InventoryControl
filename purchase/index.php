@@ -56,7 +56,7 @@
                 <h3>ライスバーガー（牛カルビ）</h3>
                 <div class="basket-item-counter">
                     <input type="button" value="-" onclick="numDown('1n');">
-                    <input type="tel" value="1" id="1n" class="inputText">
+                    <input type="num" value="1" id="1n" class="inputText">
                     <input type="button" value="+" onclick="numUp('1n');">
                 </div>
             </div>
