@@ -171,7 +171,7 @@ function view4purchase(){
         $count = 0;
         foreach($sql2 as $value2){
             if($value2['num'] > 0 && $value2['onsale'] == 1){
-                echo '<div class="menu_item" onclick="addItem('.$value2['id'].', \''.$value2['name'].'\');">';
+                echo '<div class="menu_item" onclick="addItem('.$value2['id'].', \''.$value2['name'].'\', '. $value2['num'] .');">';
                 echo '<img src="../images/'.$value2['image'].'">';
                 echo '<div>';
                 echo '<h2>'.$value2['name'].'</h2>';
