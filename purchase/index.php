@@ -48,7 +48,7 @@
         ?>
     </div>
 
-    <form method="POST" action="./purchase_check/">
+    <form method="POST" action="./purchase_check/index.php">
         <div class="right_area">
             <input type="submit" value="💰購入" id="buy" class="right-button-up">
             <h2>購入内容</h2>
@@ -56,11 +56,15 @@
                 <h3>ライスバーガー（牛カルビ）</h3>
                 <div class="basket-item-counter">
                     <input type="button" value="-" onclick="numDown('1n');">
-                    <input type="num" value="1" id="1n" class="inputText">
+                    <input type="number" value="1" id="1n" class="inputText">
                     <input type="button" value="+" onclick="numUp('1n');">
                 </div>
             </div>
         </div>
+    </form>
+    <form method="POST" action="./purchase_check/index.php">
+        <input type="number" value="1" id="1n" class="inputText">
+        <input type="submit" value="test">
     </form>
  </body>
  </html>
