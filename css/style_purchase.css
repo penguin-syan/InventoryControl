@@ -63,6 +63,8 @@ form {
 
 .menu_item {
     width: 45%;
+    border-bottom: 2px solid gray;
+    border-right: 2px solid gray;
 }
 
 .menu_item_space {
