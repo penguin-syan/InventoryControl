@@ -17,10 +17,21 @@ function addItem(id, item_name, max_item_num){
 }
 
 function numUp(id){
-    alert(document.getElementById(id).max);
-    document.getElementById(id).value = parseInt(document.getElementById(id).value) + 1;
+    var num_up_element = document.getElementById(id);
+
+    //最大数より多く購入することを防止
+    if(num_up_element.max > num_up_element.value)
+        num_up_element.value = parseInt(num_up_element.value) + 1;
+    else
+        alert('購入可能な数は' + num_up_element.max + '個までです．');
 }
 
 function numDown(id){
-    document.getElementById(id).value = parseInt(document.getElementById(id).value) - 1;
+    var num_down_element = document.getElementById(id);
+
+    //購入数が0未満になることを防止
+    if(num_down_element > 0)
+        num_down_element.value = parseInt(num_down_element.value) - 1;
+    else
+        alert('購入数を0未満には設定できません．');
 }
