@@ -17,6 +17,7 @@ function addItem(id, item_name, max_item_num){
 }
 
 function numUp(id){
+    alert(document.getElementById(id).max);
     document.getElementById(id).value = parseInt(document.getElementById(id).value) + 1;
 }
 
