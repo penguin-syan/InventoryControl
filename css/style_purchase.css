@@ -25,11 +25,14 @@ form {
     display: table;
 }
 
+.left_area {
+    display: table-cell;
+}
+
 .area {
     width: 65%;
     margin-left: 2%;
     float: left;
-    display: table-cell;
 }
 
 .right_area {

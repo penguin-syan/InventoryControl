@@ -42,11 +42,13 @@
     <div class="header-margin"></div>
 
     <div class="master">
-        <div class="area">
-            <?php
-            require_once '../connect_db.php';
-            view4purchase();
-            ?>
+        <div class="left_area">
+            <div class="area">
+                <?php
+                require_once '../connect_db.php';
+                view4purchase();
+                ?>
+            </div>
         </div>
     
         <div class="right_area">
