@@ -17,6 +17,7 @@
  <head>
      <title>食べ物販売 - 購入確認</title>
      <meta charset="UTF-8">
+     <link rel="stylesheet" href="../../css/style_header.css">
      <link rel="stylesheet" href="../../css/style_purchased.css">
      <link rel="stylesheet" href="../../css/style_button.css">
      <meta http-equiv="Cache-Control" content="no-cache">
@@ -29,7 +30,14 @@
  </head>
  
  <body oncontextmenu="return false;">
-     <h1>人間共生システム研究室 食べ物販売 - 購入確認</h1>
+    <header class="site-header">
+        <a onclick="history.back()" class="header-link">＜</a>
+        <h1>購入確認</h1>
+        <!--<a href="./" class="header-link" id="buy-button">🛒購入</a>-->
+    </header>
+
+    <div class="header-margin"></div>
+
      <h2>購入確認</h2>
      <form method="POST" action="../purchased/index.php">
      <table>
@@ -45,10 +53,8 @@
             ?>
         </table>
         <h3>注意：購入処理は完了していません．購入を決定するには，購入ボタンを押してください．</h3>
-        <input type="submit" value="💰購入" id="buy">
+        <input type="submit" value="💰購入" id="buy" class="right-button-up">
      </form>
 
-     <p id="pageBack"><a type="button" onclick="history.back()">◁修正する</a></p>
- 
- </body>
+    </body>
  </html>

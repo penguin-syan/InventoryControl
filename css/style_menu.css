@@ -17,30 +17,6 @@ body {
     user-select: none;
 }
 
-h1 {
-    padding: 1%;
-}
-
-h2 {
-    padding-left: 10%;
-}
-
-table {
-    width: 80%;
-    margin: auto;
-    margin-bottom: 2%;
-}
-
-td {
-    width: 20%;
-    font-size: 30px;
-    text-align: center;
-}
-
-img {
-    width: 70%;
-}
-
 strong {
     color: red;
 }

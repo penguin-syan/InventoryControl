@@ -17,11 +17,11 @@
  <head>
      <title>食べ物販売 - 在庫管理</title>
      <meta charset="UTF-8">
-     <link rel="stylesheet" href="../../css/style_purchase.css">
-     <link rel="stylesheet" href="../../css/style_button.css">
+     <link rel="stylesheet" href="../../css/style_header.css">
+     <link rel="stylesheet" href="../../css/style_addInvenroty.css">
      <link rel="stylesheet" href="../../css/style_resetIosButtonStyle.css">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-     <script type="text/javascript" src="../../js/script_num.js" charset="UTF-8"></script>
+     <script type="text/javascript" src="../../js/script_addInvenroty.js" charset="UTF-8"></script>
      <meta http-equiv="Cache-Control" content="no-cache">
      <meta name="apple-mobile-web-app-capable" content="yes">
      <!--
@@ -31,18 +31,21 @@
       -->
  </head>
  
- <body oncontextmenu="return false;">
-     <h1>人間共生システム研究室 在庫登録</h1>
+<body oncontextmenu="return false;">
+    <header class="site-header">
+        <a onclick="history.back()" class="header-link">＜</a>
+        <h1>在庫登録</h1>
+    </header>
+
+    <div class="header-margin"></div>
+
      <form method="POST" action="../checkInventory/index.php">
         <?php
         require_once '../../connect_db.php';
         outputAllMenu();
         ?>
-        <input type="submit" value="↻更新" id="buy" name="updateInventory">
+        <input type="submit" value="↻更新" id="buy" name="updateInventory" class="right-button-up">
      </form>
-     
-     <p id="pageBack"><a href="../">◁戻る</a></p>
-     <div id="space"> </div>
  
  </body>
  </html>

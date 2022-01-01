@@ -17,8 +17,9 @@
  <head>
      <title>食べ物販売 - メニュー</title>
      <meta charset="UTF-8">
+     <link rel="stylesheet" href="../css/style_header.css">
+     <link rel="stylesheet" href="../css/style_catTab.css">
      <link rel="stylesheet" href="../css/style_menu.css">
-     <link rel="stylesheet" href="../css/style_button.css">
      <meta http-equiv="Cache-Control" content="no-cache">
      <meta name="apple-mobile-web-app-capable" content="yes">
      <!--
@@ -29,15 +30,21 @@
  </head>
  
  <body oncontextmenu="return false;">
-     <h1>人間共生システム研究室 食べ物販売 - メニュー</h1>
-         <?php
-         require_once '../connect_db.php';
-         outputMenu();
-         ?>
-     
-     <p id="pageTop"><a href="../purchase">購入画面へ進む▷</a></p>
-     <p id="pageBack"><a href="../">◁戻る</a></p>
-     <div id="space"></div>
+        <header class="site-header">
+            <a href="../" class="header-link">＜</a>
+            <h1>メニュー</h1>
+            <a href="../purchase/" class="header-link" id="right-button">🛒購入</a>
+        </header>
+
+        <div class="header-margin"></div>
+
+        <div class="area">
+            <?php
+            require_once '../connect_db.php';
+            outputMenu();
+            ?>
+        </div>
+    <div id="space"></div>
  
  </body>
  </html>

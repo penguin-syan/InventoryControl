@@ -17,6 +17,7 @@
  <head>
      <title>食べ物販売 - 販売履歴</title>
      <meta charset="UTF-8">
+     <link rel="stylesheet" href="../../css/style_header.css">
      <link rel="stylesheet" href="../../css/style_admin.css">
      <link rel="stylesheet" href="../../css/style_button.css">
      <meta http-equiv="Cache-Control" content="no-cache">
@@ -29,7 +30,13 @@
  </head>
  
  <body oncontextmenu="return false;">
-     <h1>人間共生システム研究室 食べ物販売 - 販売履歴</h1>
+    <header class="site-header">
+        <a onclick="history.back()" class="header-link">＜</a>
+        <h1>販売履歴</h1>
+    </header>
+
+    <div class="header-margin"></div>
+ 
      <div>
         <table border="1">
         <tr>
@@ -44,8 +51,5 @@
         ?>
         </table>
     </div>
-
-    <p id="pageBack"><a href="../">◁戻る</a></p>
-    <div id="space"> </div>
  </body>
  </html>

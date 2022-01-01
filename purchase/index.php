@@ -17,13 +17,15 @@
  <head>
      <title>食べ物販売 - 購入</title>
      <meta charset="UTF-8">
-     <link rel="stylesheet" href="../css/style_purchase.css">
-     <link rel="stylesheet" href="../css/style_button.css">
-     <link rel="stylesheet" href="../css/style_resetIosButtonStyle.css">
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-     <script type="text/javascript" src="../js/script_num.js" charset="UTF-8"></script>
-     <meta http-equiv="Cache-Control" content="no-cache">
-     <meta name="apple-mobile-web-app-capable" content="yes">
+     <meta charset="UTF-8">
+        <link rel="stylesheet" href="../css/style_header.css">
+        <link rel="stylesheet" href="../css/style_catTab.css">
+        <link rel="stylesheet" href="../css/style_purchase.css">
+        <link rel="stylesheet" href="../css/style_button.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script type="text/javascript" src="../js/script_purchase.js" charset="UTF-8"></script>
+        <meta http-equiv="Cache-Control" content="no-cache">
+        <meta name="apple-mobile-web-app-capable" content="yes">
      <!--
      <link rel="icon" href="">
      <link rel="apple-touch-icon" href="">
@@ -31,19 +33,30 @@
       -->
  </head>
  
- <body oncontextmenu="return false;">
-     <h1>人間共生システム研究室 食べ物販売 - 購入ページ</h1>
-     <form method="POST" action="./purchase_check/index.php">
-            <?php
-            require_once '../connect_db.php';
-            view4purchase();
-            ?>
-        <input type="submit" value="💰購入" id="buy">
-        
-     </form>
-     
-     <p id="pageBack"><a href="../">◁購入をやめる</a></p>
-     <div id="space"> </div>
- 
+<body oncontextmenu="return false;">
+    <header class="site-header">
+        <a href="../" class="header-link">＜</a>
+        <h1>商品購入</h1>
+    </header>
+
+    <div class="header-margin"></div>
+
+    <div class="master">
+        <div class="left_area">
+            <div class="area">
+                <?php
+                require_once '../connect_db.php';
+                view4purchase();
+                ?>
+            </div>
+        </div>
+    
+        <div class="right_area">
+            <form method="POST" action="./purchase_check/">
+                <h2>購入内容</h2>
+                <input type="submit" value="💰購入" id="buy" class="right-button-up">
+            </form>
+        </div>
+    </div>
  </body>
  </html>

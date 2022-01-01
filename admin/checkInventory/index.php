@@ -23,6 +23,8 @@
  <head>
      <title>食べ物販売 - 在庫確認</title>
      <meta charset="UTF-8">
+     <link rel="stylesheet" href="../../css/style_header.css">
+     <link rel="stylesheet" href="../../css/style_catTab.css">
      <link rel="stylesheet" href="../../css/style_menu.css">
      <link rel="stylesheet" href="../../css/style_button.css">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -37,14 +39,21 @@
  </head>
  
  <body oncontextmenu="return false;">
-     <h1>人間共生システム研究室 食べ物販売 - 在庫確認</h1>
-    <?php
-    require_once '../../connect_db.php';
-    outputInventory();
-    ?>
+    <header class="site-header">
+        <a onclick="history.back()" class="header-link">＜</a>
+        <h1>在庫確認</h1>
+    </header>
+
+    <div class="header-margin"></div>
+
+    <div class="area">
+        <?php
+        require_once '../../connect_db.php';
+        outputInventory();
+        ?>
+    </div>
      
      <p id="pageTop"><a href="#">△上へ戻る</a></p>
-     <p id="pageBack"><a href="../">◁戻る</a></p>
      <div id="space"> </div>
  
  </body>

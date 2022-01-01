@@ -17,6 +17,7 @@
 <head>
    <title>食べ物販売 - 購入完了</title>
    <meta charset="UTF-8">
+   <link rel="stylesheet" href="../../css/style_header.css">
    <link rel="stylesheet" href="../../css/style_purchased.css">
    <link rel="stylesheet" href="../../css/style_resetIosButtonStyle.css">
    <script type="text/javascript" src="../../js/script_purchased.js"></script>
@@ -30,7 +31,12 @@
 </head>
 
 <body oncontextmenu="return false;">
-   <h1>人間共生システム研究室 食べ物販売 - 購入完了</h1>
+   <header class="site-header">
+      <h1>購入完了</h1>
+   </header>
+
+   <div class="header-margin"></div>
+
    <h2>購入品一覧・支払い金額</h2>
    <table>
       <tr>
@@ -51,7 +57,7 @@
    <div id="dialog">
       <div>
             <p id="msg-dialog">購入完了</p>
-            <button type="button" onclick="audioPlay()" id="close-dialog">閉じる</button>
+            <button type="button" onclick="audioPlay();" id="close-dialog">閉じる</button>
       </div>
    </div>
 
