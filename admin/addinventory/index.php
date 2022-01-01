@@ -18,7 +18,7 @@
      <title>食べ物販売 - 在庫管理</title>
      <meta charset="UTF-8">
      <link rel="stylesheet" href="../../css/style_header.css">
-     <link rel="stylesheet" href="../../css/style_purchase.css">
+     <link rel="stylesheet" href="../../css/style_addInvenroty.css">
      <link rel="stylesheet" href="../../css/style_button.css">
      <link rel="stylesheet" href="../../css/style_resetIosButtonStyle.css">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
