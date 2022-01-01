@@ -30,7 +30,7 @@ function numDown(id){
     var num_down_element = document.getElementById(id);
 
     //購入数が0未満になることを防止
-    if(num_down_element < 1)
+    if(num_down_element > 0)
         num_down_element.value = parseInt(num_down_element.value) - 1;
     else
         alert('購入数を0未満には設定できません．');
