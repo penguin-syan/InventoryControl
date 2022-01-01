@@ -52,6 +52,10 @@ form {
     width: 45%;
 }
 
+.menu_item_space {
+    width: 45%;
+}
+
 .basket-item {
     align-items: center;
     flex-wrap: wrap;

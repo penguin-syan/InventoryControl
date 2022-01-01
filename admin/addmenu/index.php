@@ -31,7 +31,7 @@
  <body oncontextmenu="return false;">
     <header class="site-header">
         <a onclick="history.back()" class="header-link">＜</a>
-        <h1>在庫登録</h1>
+        <h1>新規商品登録</h1>
     </header>
 
     <div class="header-margin"></div>
