@@ -23,16 +23,17 @@ form {
 
 .master {
     display: table;
+    width: 100%;
 }
 
 .left_area {
     display: table-cell;
+    margin-left: 2%;
+    float: left;
 }
 
 .area {
-    width: 65%;
-    margin-left: 2%;
-    float: left;
+    width: 100%;
 }
 
 .right_area {
