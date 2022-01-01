@@ -30,6 +30,7 @@ form {
     display: table-cell;
     margin-left: 2%;
     float: left;
+    width: 65%;
 }
 
 .area {
