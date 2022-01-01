@@ -41,18 +41,20 @@
 
     <div class="header-margin"></div>
 
-    <div class="area">
-        <?php
-        require_once '../connect_db.php';
-        view4purchase();
-        ?>
-    </div>
-
-    <form method="POST" action="./purchase_check/">
-        <div class="right_area">
-            <h2>購入内容</h2>
+    <div class="master">
+        <div class="area">
+            <?php
+            require_once '../connect_db.php';
+            view4purchase();
+            ?>
         </div>
-        <input type="submit" value="💰購入" id="buy" class="right-button-up">
-    </form>
+    
+        <div class="right_area">
+            <form method="POST" action="./purchase_check/">
+                <h2>購入内容</h2>
+                <input type="submit" value="💰購入" id="buy" class="right-button-up">
+            </form>
+        </div>
+    </div>
  </body>
  </html>
