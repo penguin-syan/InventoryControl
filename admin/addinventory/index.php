@@ -19,7 +19,6 @@
      <meta charset="UTF-8">
      <link rel="stylesheet" href="../../css/style_header.css">
      <link rel="stylesheet" href="../../css/style_addInvenroty.css">
-     <link rel="stylesheet" href="../../css/style_button.css">
      <link rel="stylesheet" href="../../css/style_resetIosButtonStyle.css">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
      <script type="text/javascript" src="../../js/script_num.js" charset="UTF-8"></script>
@@ -36,7 +35,6 @@
     <header class="site-header">
         <a onclick="history.back()" class="header-link">＜</a>
         <h1>在庫登録</h1>
-        <a href="./" class="header-link" id="right-button">---</a>
     </header>
 
     <div class="header-margin"></div>
@@ -46,7 +44,7 @@
         require_once '../../connect_db.php';
         outputAllMenu();
         ?>
-        <input type="submit" value="↻更新" id="buy" name="updateInventory">
+        <input type="submit" value="↻更新" id="buy" name="updateInventory" class="right-button-up">
      </form>
  
  </body>
