@@ -21,10 +21,15 @@ form {
     height: 100%;
 }
 
+.master {
+    display: table;
+}
+
 .area {
     width: 65%;
     margin-left: 2%;
     float: left;
+    display: table-cell;
 }
 
 .right_area {
@@ -38,6 +43,7 @@ form {
     background-color: white;
     position: sticky;
     top: 12%;
+    display: table-cell;
 }
 
 .right_area > h2 {
@@ -62,6 +68,7 @@ form {
     padding: 4%;
     border: 1px solid black;
     height: 12%;
+    margin-bottom: 2%;
 }
 
 .basket-item > img {

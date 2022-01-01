@@ -1,7 +1,7 @@
 function addItem(id, item_name, max_item_num){
     //購入内容にitemがあるなら数量増加，ないならitemを追加する．
     if(document.getElementById(id + "n") == null){
-        $('.right_area').append('<div class="basket-item" id="basket-item-' + id + '"></div>');
+        $('form').append('<div class="basket-item" id="basket-item-' + id + '"></div>');
         $('#basket-item-' + id).append(
             '<h3>' + item_name + '</h3>',
             '<div class="basket-item-counter" id = "basket-item-counter-' + id + '"></div>');
