@@ -39,7 +39,7 @@ form {
 
 .right_area {
     width: calc(25% - 2px);
-    height: 80vh;
+    height: 78vh;
     margin-left: 2%;
     margin-right: 2%;
     float: right;
@@ -49,6 +49,8 @@ form {
     position: sticky;
     top: 12%;
     display: table-cell;
+    overflow: scroll;
+    overflow-x: hidden;
 }
 
 .right_area > h2 {
