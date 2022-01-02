@@ -18,7 +18,12 @@ body {
 }
 
 form {
-    height: 100%;
+    width: calc(25% - 2px);
+    float: right;
+    display: table-cell;
+    position: sticky;
+    padding-right: 2%;
+    top: 12%;
 }
 
 .master {
@@ -46,9 +51,6 @@ form {
     border: 1px solid black;
     padding: 2%;
     background-color: white;
-    position: sticky;
-    top: 12%;
-    display: table-cell;
     overflow: scroll;
     overflow-x: hidden;
 }
