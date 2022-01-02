@@ -51,12 +51,12 @@
             </div>
         </div>
     
-        <div class="right_area">
-            <form method="POST" action="./purchase_check/">
+        <form method="POST" action="./purchase_check/">
+            <div class="right_area">
                 <input type="submit" value="💰購入" id="buy" class="right-button-up">
                 <h2>購入内容</h2>
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
  </body>
  </html>
