@@ -1,9 +1,9 @@
-name: Deploy to server directory
+name: Deploy to test directory
 
 on:
   push:
     branches:
-      - main
+      - develop
 
 jobs:
   build:
@@ -19,5 +19,5 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           passphrase: ${{ secrets.SSH_PASS }}
           script: |
-            cd ${{ secrets.SERVER_DEPLOY_DIR }}
-            git pull origin main
+            cd ${{ secrets.SERVER_DEPLOY_DIR_T }}
+            git pull origin develop
