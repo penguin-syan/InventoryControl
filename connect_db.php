@@ -12,7 +12,7 @@
 *=============================================================
 */
 header('Content-Type: text/html; charset=UTF-8');
-require_once '/virtual/penguin/secure/HSSLab/db_info.php';
+require_once '/home/penguinsyan/secure/db_info.php';
 
 /**
  * データベース上でsqlコマンドを実行する
